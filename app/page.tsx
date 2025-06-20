@@ -10,7 +10,7 @@ export default function Page() {
             author: 'F. Scott Fitzgerald',
             genre: 'Classic',
             status: 'Read',
-            rating: 4.5,
+            comment: 'A masterpiece of American literature with beautiful prose.',
         },
         {
             id: 2,
@@ -18,7 +18,7 @@ export default function Page() {
             author: 'Harper Lee',
             genre: 'Fiction',
             status: 'Currently Reading',
-            rating: 4.8,
+            comment: 'Powerful story about justice and moral courage.',
         },
         {
             id: 3,
@@ -26,7 +26,7 @@ export default function Page() {
             author: 'George Orwell',
             genre: 'Dystopian',
             status: 'Want to Read',
-            rating: 4.7,
+            comment: 'Looking forward to this thought-provoking dystopian classic.',
         },
         {
             id: 4,
@@ -34,7 +34,7 @@ export default function Page() {
             author: 'Jane Austen',
             genre: 'Romance',
             status: 'Read',
-            rating: 4.3,
+            comment: 'Witty and charming romance with memorable characters.',
         },
     ]);
 
@@ -45,13 +45,13 @@ export default function Page() {
         author: '',
         genre: '',
         status: 'Want to Read',
-        rating: 0,
+        comment: '',
     });
 
     const handleAddBook = () => {
         if (newBook.title && newBook.author) {
             setBooks([...books, { ...newBook, id: Date.now() }]);
-            setNewBook({ title: '', author: '', genre: '', status: 'Want to Read', rating: 0 });
+            setNewBook({ title: '', author: '', genre: '', status: 'Want to Read', comment: '' });
             setShowAddForm(false);
         }
     };
@@ -65,7 +65,7 @@ export default function Page() {
     const handleUpdateBook = () => {
         setBooks(books.map((book) => (book.id === editingBook.id ? newBook : book)));
         setEditingBook(null);
-        setNewBook({ title: '', author: '', genre: '', status: 'Want to Read', rating: 0 });
+        setNewBook({ title: '', author: '', genre: '', status: 'Want to Read', comment: '' });
         setShowAddForm(false);
     };
 
@@ -108,11 +108,20 @@ export default function Page() {
                                 <h1 className="text-2xl font-bold text-gray-900" data-oid="7nk28tc">
                                     BookGroup
                                 </h1>
-                                <p className="text-sm text-gray-600" data-oid="9t:o1yy">
-                                    Manage your reading community
+                                <p
+                                    className="text-sm text-gray-600 w-[220px] h-[59px]"
+                                    data-oid="9t:o1yy"
+                                >
+                                    Say here kitty kitty, and you will find your next favorite book!
                                 </p>
+                                <p
+                                    className="w-[30px] h-[30px]"
+                                    data-oid="89sdq0x"
+                                    key="olk-e_eu"
+                                ></p>
                             </div>
                         </div>
+                        <p className="w-[30px] h-[30px]" data-oid="2.bwow3" key="olk-jWXI"></p>
                         <button
                             onClick={() => setShowAddForm(true)}
                             className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg"
@@ -221,21 +230,23 @@ export default function Page() {
                                 </div>
                             </div>
 
-                            <div className="flex items-center justify-between" data-oid="c2qbbfh">
+                            <div className="space-y-3" data-oid="c2qbbfh">
                                 <span
                                     className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(book.status)}`}
                                     data-oid="r5_1rt:"
                                 >
                                     {book.status}
                                 </span>
-                                <div className="flex items-center space-x-1" data-oid="hlvg9ce">
-                                    <span className="text-yellow-400" data-oid="h8ixlwi">
-                                        ⭐
-                                    </span>
-                                    <span className="text-sm text-gray-600" data-oid="ynh2g-v">
-                                        {book.rating}
-                                    </span>
-                                </div>
+                                {book.comment && (
+                                    <div className="bg-gray-50 p-3 rounded-lg" data-oid="hlvg9ce">
+                                        <p
+                                            className="text-sm text-gray-700 italic"
+                                            data-oid="ynh2g-v"
+                                        >
+                                            "{book.comment}"
+                                        </p>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     ))}
@@ -343,22 +354,19 @@ export default function Page() {
                                     className="block text-sm font-medium text-gray-700 mb-1"
                                     data-oid="2pq_-yc"
                                 >
-                                    Rating
+                                    Comment
                                 </label>
-                                <input
-                                    type="number"
-                                    min="0"
-                                    max="5"
-                                    step="0.1"
-                                    value={newBook.rating}
+                                <textarea
+                                    value={newBook.comment}
                                     onChange={(e) =>
                                         setNewBook({
                                             ...newBook,
-                                            rating: parseFloat(e.target.value),
+                                            comment: e.target.value,
                                         })
                                     }
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                    placeholder="0.0"
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
+                                    placeholder="Add your thoughts about this book..."
+                                    rows={3}
                                     data-oid="q32.ixl"
                                 />
                             </div>
@@ -381,7 +389,7 @@ export default function Page() {
                                         author: '',
                                         genre: '',
                                         status: 'Want to Read',
-                                        rating: 0,
+                                        comment: '',
                                     });
                                 }}
                                 className="flex-1 bg-gray-200 text-gray-800 py-2 rounded-lg hover:bg-gray-300 transition-colors duration-200"
