@@ -45,47 +45,34 @@ export default function Page() {
     return (
         <div
             className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100"
-            data-oid="l66_ymm"
+            data-oid="6szq1rc"
         >
             {/* Header */}
-            <header
-                className="bg-white shadow-sm border-b border-purple-100"
-                data-oid="x3o9nza"
-                key="olk-P4ML"
-            >
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-oid="z_xyck1">
-                    <div className="flex items-center justify-between" data-oid="vy5f_m5">
-                        <div className="flex items-center space-x-3" data-oid="4x:jk7x">
+            <header className="bg-white shadow-sm border-b border-purple-100" data-oid="l8.n.89">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-oid="jxbxejb">
+                    <div className="flex items-center justify-between" data-oid="_init57">
+                        <div className="flex items-center space-x-3" data-oid="xd7jf7o">
                             <div
                                 className="w-10 h-10 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center"
-                                data-oid="61o-o64"
+                                data-oid="qf01l.a"
                             >
-                                <span className="text-white font-bold text-lg" data-oid="ij93kbd">
+                                <span className="text-white font-bold text-lg" data-oid="fh5cwb7">
                                     📚
                                 </span>
                             </div>
-                            <div data-oid="0rksdfy">
-                                <h1 className="text-2xl font-bold text-gray-900" data-oid="7nk28tc">
+                            <div data-oid="vxp4lu_">
+                                <h1 className="text-2xl font-bold text-gray-900" data-oid="skw:qmd">
                                     BookGroup
                                 </h1>
-                                <p
-                                    className="text-sm text-gray-600 w-[220px] h-[59px]"
-                                    data-oid="9t:o1yy"
-                                >
+                                <p className="text-sm text-gray-600" data-oid="wg7:.x0">
                                     Say here kitty kitty, and you will find your next favorite book!
                                 </p>
-                                <p
-                                    className="w-[30px] h-[30px]"
-                                    data-oid="89sdq0x"
-                                    key="olk-e_eu"
-                                ></p>
                             </div>
                         </div>
-                        <p className="w-[30px] h-[30px]" data-oid="2.bwow3" key="olk-jWXI"></p>
                         <Link
                             href="/all-books"
                             className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg"
-                            data-oid="doinu-n"
+                            data-oid="onfiqmw"
                         >
                             Manage Books
                         </Link>
@@ -94,275 +81,142 @@ export default function Page() {
             </header>
 
             {/* Main Content */}
-
-            {/* Add/Edit Book Modal */}
-            {showAddForm && (
-                <div
-                    className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
-                    data-oid="iibj1v6"
-                >
-                    <div className="bg-white rounded-xl p-6 w-full max-w-md" data-oid="cdjgftp">
-                        <h2 className="text-xl font-bold text-gray-900 mb-4" data-oid="4tu5gbc">
-                            {editingBook ? 'Edit Book' : 'Add New Book'}
-                        </h2>
-
-                        <div className="space-y-4" data-oid="-qdq1b8">
-                            <div data-oid="lsoi0aa">
-                                <label
-                                    className="block text-sm font-medium text-gray-700 mb-1"
-                                    data-oid="4lms4hj"
-                                >
-                                    Title
-                                </label>
-                                <input
-                                    type="text"
-                                    value={newBook.title}
-                                    onChange={(e) =>
-                                        setNewBook({ ...newBook, title: e.target.value })
-                                    }
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                    placeholder="Enter book title"
-                                    data-oid="qw0k5p4"
-                                />
-                            </div>
-
-                            <div data-oid=":p2p7ah">
-                                <label
-                                    className="block text-sm font-medium text-gray-700 mb-1"
-                                    data-oid="qj:cc9d"
-                                >
-                                    Author
-                                </label>
-                                <input
-                                    type="text"
-                                    value={newBook.author}
-                                    onChange={(e) =>
-                                        setNewBook({ ...newBook, author: e.target.value })
-                                    }
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                    placeholder="Enter author name"
-                                    data-oid="o.laa-8"
-                                />
-                            </div>
-
-                            <div data-oid="vvdon32">
-                                <label
-                                    className="block text-sm font-medium text-gray-700 mb-1"
-                                    data-oid="787thnv"
-                                >
-                                    Genre
-                                </label>
-                                <input
-                                    type="text"
-                                    value={newBook.genre}
-                                    onChange={(e) =>
-                                        setNewBook({ ...newBook, genre: e.target.value })
-                                    }
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                    placeholder="Enter genre"
-                                    data-oid="oi9rl9-"
-                                />
-                            </div>
-
-                            <div data-oid="_9fu0ds">
-                                <label
-                                    className="block text-sm font-medium text-gray-700 mb-1"
-                                    data-oid="9pn7glc"
-                                >
-                                    Status
-                                </label>
-                                <select
-                                    value={newBook.status}
-                                    onChange={(e) =>
-                                        setNewBook({ ...newBook, status: e.target.value })
-                                    }
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                    data-oid="x_:7wzj"
-                                >
-                                    <option value="Want to Read" data-oid="nlougye">
-                                        Want to Read
-                                    </option>
-                                    <option value="Currently Reading" data-oid="g_abudu">
-                                        Currently Reading
-                                    </option>
-                                    <option value="Read" data-oid="m3gbz-g">
-                                        Read
-                                    </option>
-                                </select>
-                            </div>
-
-                            <div data-oid="h51srsg">
-                                <label
-                                    className="block text-sm font-medium text-gray-700 mb-1"
-                                    data-oid="2pq_-yc"
-                                >
-                                    Comment
-                                </label>
-                                <textarea
-                                    value={newBook.comment}
-                                    onChange={(e) =>
-                                        setNewBook({
-                                            ...newBook,
-                                            comment: e.target.value,
-                                        })
-                                    }
-                                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
-                                    placeholder="Add your thoughts about this book..."
-                                    rows={3}
-                                    data-oid="q32.ixl"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="flex space-x-3 mt-6" data-oid="n2j.gpy">
-                            <button
-                                onClick={editingBook ? handleUpdateBook : handleAddBook}
-                                className="flex-1 bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-2 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200"
-                                data-oid="3q.1_hy"
-                            >
-                                {editingBook ? 'Update Book' : 'Add Book'}
-                            </button>
-                            <button
-                                onClick={() => {
-                                    setShowAddForm(false);
-                                    setEditingBook(null);
-                                    setNewBook({
-                                        title: '',
-                                        author: '',
-                                        genre: '',
-                                        status: 'Want to Read',
-                                        comment: '',
-                                    });
-                                }}
-                                className="flex-1 bg-gray-200 text-gray-800 py-2 rounded-lg hover:bg-gray-300 transition-colors duration-200"
-                                data-oid="1qwcaba"
-                            >
-                                Cancel
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
-            <main
-                className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
-                data-oid="2.jb75k"
-                key="olk-alSM"
-            >
-                {/* Stats */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8" data-oid="1lanv3l">
-                    <div
-                        className="bg-white rounded-xl p-6 shadow-sm border border-purple-100"
-                        data-oid="qj3ityl"
-                    >
-                        <div className="text-2xl font-bold text-purple-600" data-oid="6o850td">
-                            {books.length}
-                        </div>
-                        <div className="text-gray-600" data-oid="blh19-g">
-                            Total Books
-                        </div>
-                    </div>
-                    <div
-                        className="bg-white rounded-xl p-6 shadow-sm border border-green-100"
-                        data-oid="zj73xj5"
-                    >
-                        <div className="text-2xl font-bold text-green-600" data-oid="zkmzp1v">
-                            {books.filter((book) => book.status === 'Read').length}
-                        </div>
-                        <div className="text-gray-600" data-oid="2cj73p4">
-                            Books Read
-                        </div>
-                    </div>
-                    <div
-                        className="bg-white rounded-xl p-6 shadow-sm border border-blue-100"
-                        data-oid="g6qpg3-"
-                    >
-                        <div className="text-2xl font-bold text-blue-600" data-oid="2bwrepi">
-                            {books.filter((book) => book.status === 'Currently Reading').length}
-                        </div>
-                        <div className="text-gray-600" data-oid="qh9q_b6">
-                            Currently Reading
-                        </div>
-                    </div>
-                    <div
-                        className="bg-white rounded-xl p-6 shadow-sm border border-yellow-100"
-                        data-oid="lvm5_o3"
-                    >
-                        <div className="text-2xl font-bold text-yellow-600" data-oid="n-s23m0">
-                            {books.filter((book) => book.status === 'Want to Read').length}
-                        </div>
-                        <div className="text-gray-600" data-oid="-39hxfm">
-                            Want to Read
-                        </div>
-                    </div>
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-oid="ps:3c9r">
+                {/* Welcome Section */}
+                <div className="text-center mb-12" data-oid="at.-_hz">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4" data-oid="v_1jdi.">
+                        Welcome to Your Personal Library
+                    </h2>
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto" data-oid="54zgdr4">
+                        Organize your reading journey by exploring different categories of books.
+                        Track what you've read, what you're currently reading, and plan your future
+                        reads.
+                    </p>
                 </div>
 
-                {/* Books Grid */}
+                {/* Category Cards */}
                 <div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                    data-oid="7anmr3s"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+                    data-oid="x_gici4"
                 >
-                    {books.map((book) => (
-                        <div
-                            key={book.id}
-                            className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200"
-                            data-oid="aifw1lc"
+                    {categories.map((category, index) => (
+                        <Link
+                            key={index}
+                            href={category.href}
+                            className="group block"
+                            data-oid="_h3ag0f"
                         >
                             <div
-                                className="flex justify-between items-start mb-4"
-                                data-oid="u06etzg"
+                                className={`bg-white rounded-xl p-8 shadow-sm border ${category.borderColor} hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`}
+                                data-oid="s0spnly"
                             >
-                                <div className="flex-1" data-oid="afrfnjh">
-                                    <h3
-                                        className="text-lg font-semibold text-gray-900 mb-1"
-                                        data-oid="6hy44xy"
+                                <div className="text-center" data-oid="s0mphr0">
+                                    <div
+                                        className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-full flex items-center justify-center mx-auto mb-4`}
+                                        data-oid="qze0wsj"
                                     >
-                                        {book.title}
+                                        <span className="text-2xl" data-oid="nzvq87e">
+                                            {category.icon}
+                                        </span>
+                                    </div>
+                                    <h3
+                                        className={`text-xl font-bold ${category.textColor} mb-2`}
+                                        data-oid="bh446tw"
+                                    >
+                                        {category.title}
                                     </h3>
-                                    <p className="text-gray-600 mb-2" data-oid="ofwnatn">
-                                        by {book.author}
+                                    <p
+                                        className="text-gray-600 text-sm leading-relaxed"
+                                        data-oid="0jb8nu8"
+                                    >
+                                        {category.description}
                                     </p>
-                                    <span className="text-sm text-gray-500" data-oid="ozzfaz1">
-                                        {book.genre}
+                                </div>
+                                <div className="mt-6 text-center" data-oid="118nu:1">
+                                    <span
+                                        className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r ${category.color} text-white group-hover:shadow-md transition-shadow duration-200`}
+                                        data-oid="3y0.14x"
+                                    >
+                                        Explore
+                                        <svg
+                                            className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-200"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                            data-oid="2dfl5wv"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M9 5l7 7-7 7"
+                                                data-oid="6h_r24l"
+                                            />
+                                        </svg>
                                     </span>
                                 </div>
-                                <div className="flex space-x-2" data-oid="jg8joy5">
-                                    <button
-                                        onClick={() => handleEditBook(book)}
-                                        className="text-indigo-600 hover:text-indigo-800 text-sm"
-                                        data-oid="jqhc0of"
-                                    >
-                                        Edit
-                                    </button>
-                                    <button
-                                        onClick={() => handleDeleteBook(book.id)}
-                                        className="text-red-600 hover:text-red-800 text-sm"
-                                        data-oid="91echt4"
-                                    >
-                                        Delete
-                                    </button>
-                                </div>
                             </div>
+                        </Link>
+                    ))}
+                </div>
 
-                            <div className="space-y-3" data-oid="3aie07r">
-                                <span
-                                    className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(book.status)}`}
-                                    data-oid="o.0jyp7"
-                                >
-                                    {book.status}
-                                </span>
-                                {book.comment && (
-                                    <div className="bg-gray-50 p-3 rounded-lg" data-oid="kzfr0ki">
-                                        <p
-                                            className="text-sm text-gray-700 italic"
-                                            data-oid="miuw_lh"
-                                        >
-                                            "{book.comment}"
-                                        </p>
-                                    </div>
-                                )}
+                {/* Quick Stats Section */}
+                <div
+                    className="mt-16 bg-white rounded-xl p-8 shadow-sm border border-gray-100"
+                    data-oid="4ngk3sl"
+                >
+                    <h3
+                        className="text-2xl font-bold text-gray-900 text-center mb-8"
+                        data-oid="pw07qf2"
+                    >
+                        Quick Overview
+                    </h3>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6" data-oid="yqptkpu">
+                        <div className="text-center" data-oid="rmsj1qx">
+                            <div
+                                className="text-3xl font-bold text-purple-600 mb-2"
+                                data-oid=".q-yyhb"
+                            >
+                                4
+                            </div>
+                            <div className="text-gray-600 text-sm" data-oid="9o60:sw">
+                                Categories
                             </div>
                         </div>
-                    ))}
+                        <div className="text-center" data-oid="0n0eqv3">
+                            <div
+                                className="text-3xl font-bold text-green-600 mb-2"
+                                data-oid="iv.tt7z"
+                            >
+                                ∞
+                            </div>
+                            <div className="text-gray-600 text-sm" data-oid="3b1lkj7">
+                                Possibilities
+                            </div>
+                        </div>
+                        <div className="text-center" data-oid="v725440">
+                            <div
+                                className="text-3xl font-bold text-blue-600 mb-2"
+                                data-oid="zlq0.4f"
+                            >
+                                📖
+                            </div>
+                            <div className="text-gray-600 text-sm" data-oid="7am63g_">
+                                Reading
+                            </div>
+                        </div>
+                        <div className="text-center" data-oid="pb8ua_8">
+                            <div
+                                className="text-3xl font-bold text-yellow-600 mb-2"
+                                data-oid=":y5_2i6"
+                            >
+                                🎯
+                            </div>
+                            <div className="text-gray-600 text-sm" data-oid=":0__3za">
+                                Goals
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </main>
         </div>
