@@ -1,90 +1,46 @@
 'use client';
 
-import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Page() {
-    const [books, setBooks] = useState([
+    const categories = [
         {
-            id: 1,
-            title: 'The Great Gatsby',
-            author: 'F. Scott Fitzgerald',
-            genre: 'Classic',
-            status: 'Read',
-            comment: 'A masterpiece of American literature with beautiful prose.',
+            title: 'All Books',
+            description: 'Browse your complete book collection',
+            icon: '📚',
+            color: 'from-purple-600 to-indigo-600',
+            borderColor: 'border-purple-100',
+            textColor: 'text-purple-600',
+            href: '/all-books',
         },
         {
-            id: 2,
-            title: 'To Kill a Mockingbird',
-            author: 'Harper Lee',
-            genre: 'Fiction',
-            status: 'Currently Reading',
-            comment: 'Powerful story about justice and moral courage.',
+            title: 'Books Read',
+            description: 'View all the books you have completed',
+            icon: '✅',
+            color: 'from-green-600 to-emerald-600',
+            borderColor: 'border-green-100',
+            textColor: 'text-green-600',
+            href: '/books-read',
         },
         {
-            id: 3,
-            title: '1984',
-            author: 'George Orwell',
-            genre: 'Dystopian',
-            status: 'Want to Read',
-            comment: 'Looking forward to this thought-provoking dystopian classic.',
+            title: 'Currently Reading',
+            description: 'Books you are actively reading',
+            icon: '📖',
+            color: 'from-blue-600 to-cyan-600',
+            borderColor: 'border-blue-100',
+            textColor: 'text-blue-600',
+            href: '/currently-reading',
         },
         {
-            id: 4,
-            title: 'Pride and Prejudice',
-            author: 'Jane Austen',
-            genre: 'Romance',
-            status: 'Read',
-            comment: 'Witty and charming romance with memorable characters.',
+            title: 'Want to Read',
+            description: 'Your reading wishlist and future reads',
+            icon: '🔖',
+            color: 'from-yellow-600 to-orange-600',
+            borderColor: 'border-yellow-100',
+            textColor: 'text-yellow-600',
+            href: '/want-to-read',
         },
-    ]);
-
-    const [showAddForm, setShowAddForm] = useState(false);
-    const [editingBook, setEditingBook] = useState(null);
-    const [newBook, setNewBook] = useState({
-        title: '',
-        author: '',
-        genre: '',
-        status: 'Want to Read',
-        comment: '',
-    });
-
-    const handleAddBook = () => {
-        if (newBook.title && newBook.author) {
-            setBooks([...books, { ...newBook, id: Date.now() }]);
-            setNewBook({ title: '', author: '', genre: '', status: 'Want to Read', comment: '' });
-            setShowAddForm(false);
-        }
-    };
-
-    const handleEditBook = (book) => {
-        setEditingBook(book);
-        setNewBook(book);
-        setShowAddForm(true);
-    };
-
-    const handleUpdateBook = () => {
-        setBooks(books.map((book) => (book.id === editingBook.id ? newBook : book)));
-        setEditingBook(null);
-        setNewBook({ title: '', author: '', genre: '', status: 'Want to Read', comment: '' });
-        setShowAddForm(false);
-    };
-
-    const handleDeleteBook = (id) => {
-        setBooks(books.filter((book) => book.id !== id));
-    };
-
-    const getStatusColor = (status) => {
-        switch (status) {
-            case 'Read':
-                return 'bg-green-100 text-green-800';
-            case 'Currently Reading':
-                return 'bg-blue-100 text-blue-800';
-            case 'Want to Read':
-                return 'bg-yellow-100 text-yellow-800';
-            default:
-                return 'bg-gray-100 text-gray-800';
-        }
-    };
+    ];
 
     return (
         <div
@@ -126,13 +82,13 @@ export default function Page() {
                             </div>
                         </div>
                         <p className="w-[30px] h-[30px]" data-oid="2.bwow3" key="olk-jWXI"></p>
-                        <button
-                            onClick={() => setShowAddForm(true)}
+                        <Link
+                            href="/all-books"
                             className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg"
                             data-oid="doinu-n"
                         >
-                            + Add Book
-                        </button>
+                            Manage Books
+                        </Link>
                     </div>
                 </div>
             </header>
