@@ -191,7 +191,7 @@ export default function Page() {
                     {books.map((book) => (
                         <div
                             key={book.id}
-                            className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200"
+                            className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200 drop-shadow-sm shadow-pink-200/50"
                             data-oid="x8x:95g"
                         >
                             <div
