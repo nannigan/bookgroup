@@ -51,7 +51,7 @@ export default function AllBooksPage() {
     };
 
     const handleUpdateBook = () => {
-        if (newBook.title && newBook.author) {
+        if (newBook.title && newBook.author && editingBook) {
             updateBook(editingBook.id, newBook);
             resetForm();
         }
