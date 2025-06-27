@@ -8,7 +8,8 @@
         "export": "next build && next export",
         "start": "next start",
         "lint": "next lint",
-        "format": "prettier --write ."
+        "format": "prettier --write .",
+        "test:connection": "node -e \"import('./lib/connection-test.js').then(m => m.quickConnectionTest().then(r => console.log(r)))\""
     },
     "dependencies": {
         "@radix-ui/react-slot": "^1.1.0",
