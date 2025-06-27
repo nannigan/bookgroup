@@ -386,7 +386,10 @@ export default function AllBooksPage() {
                                 <select
                                     value={newBook.status}
                                     onChange={(e) =>
-                                        setNewBook({ ...newBook, status: e.target.value })
+                                        setNewBook({
+                                            ...newBook,
+                                            status: e.target.value as Book['status'],
+                                        })
                                     }
                                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                                     data-oid="l9xh8c:"
