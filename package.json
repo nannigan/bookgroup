@@ -5,13 +5,9 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "export": "next build && next export",
         "start": "next start",
         "lint": "next lint",
-        "format": "prettier --write .",
-        "test:connection": "node -e \"import('./lib/connection-test.js').then(m => m.quickConnectionTest().then(r => console.log(r)))\"",
-        "update-browserslist": "npx update-browserslist-db@latest",
-        "build:clean": "npx update-browserslist-db@latest && next build"
+        "format": "prettier --write ."
     },
     "dependencies": {
         "@radix-ui/react-slot": "^1.1.0",
