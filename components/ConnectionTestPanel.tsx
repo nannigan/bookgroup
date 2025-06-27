@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ConnectionTest, quickConnectionTest } from '../lib/connection-test';
+import { ConnectionTest, quickConnectionTest } from '../lib/connection-test.js';
 
 export function ConnectionTestPanel() {
     const [isTestRunning, setIsTestRunning] = useState(false);
