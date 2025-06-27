@@ -207,7 +207,7 @@ export default function AllBooksPage() {
                         data-oid="5l-bzx."
                     >
                         <div className="text-2xl font-bold text-green-600" data-oid="j7s4j8h">
-                            {books.filter((book) => book.status === 'Read').length}
+                            {books.filter((book: Book) => book.status === 'Read').length}
                         </div>
                         <div className="text-gray-600" data-oid="1jh9ari">
                             Books Read
@@ -218,7 +218,10 @@ export default function AllBooksPage() {
                         data-oid="5gd0qwr"
                     >
                         <div className="text-2xl font-bold text-blue-600" data-oid="dhfsak1">
-                            {books.filter((book) => book.status === 'Currently Reading').length}
+                            {
+                                books.filter((book: Book) => book.status === 'Currently Reading')
+                                    .length
+                            }
                         </div>
                         <div className="text-gray-600" data-oid="a8ssbur">
                             Currently Reading
@@ -229,7 +232,7 @@ export default function AllBooksPage() {
                         data-oid="j1fewb4"
                     >
                         <div className="text-2xl font-bold text-yellow-600" data-oid="qsxwj15">
-                            {books.filter((book) => book.status === 'Want to Read').length}
+                            {books.filter((book: Book) => book.status === 'Want to Read').length}
                         </div>
                         <div className="text-gray-600" data-oid="res3bsn">
                             Want to Read
@@ -242,7 +245,7 @@ export default function AllBooksPage() {
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
                     data-oid="sx.38g8"
                 >
-                    {books.map((book) => (
+                    {books.map((book: Book) => (
                         <div
                             key={book.id}
                             className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200"
