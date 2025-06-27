@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import Link from 'next/link';
 import { getStatusColor } from '../../lib/books-data';
 import { useBooks } from '../../lib/useBooks';
+import { JSONBinStatus } from '../../components/JSONBinStatus';
 
 export default function AllBooksPage() {
     const {
@@ -175,6 +176,9 @@ export default function AllBooksPage() {
 
             {/* Main Content */}
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-oid="yd74d36">
+                {/* Connection Status */}
+                <JSONBinStatus data-oid="dl2qp5j" />
+
                 {/* Stats */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8" data-oid="4o1ka.y">
                     <div
