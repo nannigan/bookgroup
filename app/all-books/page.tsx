@@ -1,11 +1,22 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
-import { initialBooks, getStatusColor } from '../../lib/books-data';
+import { getStatusColor } from '../../lib/books-data';
+import { useBooks } from '../../lib/useBooks';
 
 export default function AllBooksPage() {
-    const [books, setBooks] = useState(initialBooks);
+    const {
+        books,
+        isLoading,
+        addBook,
+        updateBook,
+        deleteBook,
+        resetToDefaults,
+        exportBooks,
+        importBooks,
+    } = useBooks();
+
     const [showAddForm, setShowAddForm] = useState(false);
     const [editingBook, setEditingBook] = useState(null);
     const [newBook, setNewBook] = useState({
@@ -15,31 +26,86 @@ export default function AllBooksPage() {
         status: 'Want to Read',
         comment: '',
     });
+    const [showImportExport, setShowImportExport] = useState(false);
+    const fileInputRef = useRef(null);
 
     const handleAddBook = () => {
         if (newBook.title && newBook.author) {
-            setBooks([...books, { ...newBook, id: Date.now() }]);
-            setNewBook({ title: '', author: '', genre: '', status: 'Want to Read', comment: '' });
-            setShowAddForm(false);
+            addBook(newBook);
+            resetForm();
         }
     };
 
     const handleEditBook = (book) => {
         setEditingBook(book);
-        setNewBook(book);
+        setNewBook({ ...book });
         setShowAddForm(true);
     };
 
     const handleUpdateBook = () => {
-        setBooks(books.map((book) => (book.id === editingBook.id ? newBook : book)));
+        if (newBook.title && newBook.author) {
+            updateBook(editingBook.id, newBook);
+            resetForm();
+        }
+    };
+
+    const handleDeleteBook = (id) => {
+        if (confirm('Are you sure you want to delete this book?')) {
+            deleteBook(id);
+        }
+    };
+
+    const resetForm = () => {
         setEditingBook(null);
         setNewBook({ title: '', author: '', genre: '', status: 'Want to Read', comment: '' });
         setShowAddForm(false);
     };
 
-    const handleDeleteBook = (id) => {
-        setBooks(books.filter((book) => book.id !== id));
+    const handleImportBooks = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const success = importBooks(e.target.result);
+                if (success) {
+                    alert('Books imported successfully!');
+                } else {
+                    alert('Error importing books. Please check the file format.');
+                }
+            };
+            reader.readAsText(file);
+        }
+        setShowImportExport(false);
     };
+
+    const handleResetData = () => {
+        if (
+            confirm(
+                'Are you sure you want to reset all data to defaults? This will delete all your custom books.',
+            )
+        ) {
+            resetToDefaults();
+        }
+    };
+
+    if (isLoading) {
+        return (
+            <div
+                className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 flex items-center justify-center"
+                data-oid="i094hbx"
+            >
+                <div className="text-center" data-oid="i0zvu:0">
+                    <div
+                        className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"
+                        data-oid="g737avv"
+                    ></div>
+                    <p className="text-gray-600" data-oid="e7_cmoo">
+                        Loading your books...
+                    </p>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div
@@ -88,6 +154,13 @@ export default function AllBooksPage() {
                             >
                                 ← Back to Home
                             </Link>
+                            <button
+                                onClick={() => setShowImportExport(true)}
+                                className="text-gray-600 hover:text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+                                data-oid="pf8k0su"
+                            >
+                                ⚙️ Manage Data
+                            </button>
                             <button
                                 onClick={() => setShowAddForm(true)}
                                 className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg"
@@ -345,21 +418,96 @@ export default function AllBooksPage() {
                                 {editingBook ? 'Update Book' : 'Add Book'}
                             </button>
                             <button
-                                onClick={() => {
-                                    setShowAddForm(false);
-                                    setEditingBook(null);
-                                    setNewBook({
-                                        title: '',
-                                        author: '',
-                                        genre: '',
-                                        status: 'Want to Read',
-                                        comment: '',
-                                    });
-                                }}
+                                onClick={resetForm}
                                 className="flex-1 bg-gray-200 text-gray-800 py-2 rounded-lg hover:bg-gray-300 transition-colors duration-200"
                                 data-oid="n5v9.u9"
                             >
                                 Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Import/Export Modal */}
+            {showImportExport && (
+                <div
+                    className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+                    data-oid="nydr297"
+                >
+                    <div className="bg-white rounded-xl p-6 w-full max-w-md" data-oid="kt1orbw">
+                        <h2 className="text-xl font-bold text-gray-900 mb-4" data-oid=":nzgxn4">
+                            Manage Your Data
+                        </h2>
+
+                        <div className="space-y-4" data-oid="x65r9:3">
+                            <div data-oid="6aak3hn">
+                                <h3 className="font-semibold text-gray-700 mb-2" data-oid="gj2ye1f">
+                                    Export Books
+                                </h3>
+                                <p className="text-sm text-gray-600 mb-3" data-oid="l_6lm4a">
+                                    Download your books as a JSON file for backup or sharing.
+                                </p>
+                                <button
+                                    onClick={exportBooks}
+                                    className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                                    data-oid=":eqrj5j"
+                                >
+                                    📥 Export Books
+                                </button>
+                            </div>
+
+                            <div data-oid="p9w6x5m">
+                                <h3 className="font-semibold text-gray-700 mb-2" data-oid="7cg1oyd">
+                                    Import Books
+                                </h3>
+                                <p className="text-sm text-gray-600 mb-3" data-oid="d1020my">
+                                    Import books from a JSON file. This will add to your existing
+                                    books.
+                                </p>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef}
+                                    onChange={handleImportBooks}
+                                    accept=".json"
+                                    className="hidden"
+                                    data-oid="kma:u6o"
+                                />
+
+                                <button
+                                    onClick={() => fileInputRef.current?.click()}
+                                    className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors"
+                                    data-oid=".ew6txi"
+                                >
+                                    📤 Import Books
+                                </button>
+                            </div>
+
+                            <div data-oid="96oqae8">
+                                <h3 className="font-semibold text-gray-700 mb-2" data-oid="...34ln">
+                                    Reset Data
+                                </h3>
+                                <p className="text-sm text-gray-600 mb-3" data-oid="7aur8:g">
+                                    Reset to the original sample books. This will delete all your
+                                    custom data.
+                                </p>
+                                <button
+                                    onClick={handleResetData}
+                                    className="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition-colors"
+                                    data-oid=".l.9z6x"
+                                >
+                                    🔄 Reset to Defaults
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="mt-6" data-oid="zi6xfa8">
+                            <button
+                                onClick={() => setShowImportExport(false)}
+                                className="w-full bg-gray-200 text-gray-800 py-2 rounded-lg hover:bg-gray-300 transition-colors"
+                                data-oid="hl.6z3i"
+                            >
+                                Close
                             </button>
                         </div>
                     </div>

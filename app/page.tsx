@@ -1,8 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import { useBooks } from '../lib/useBooks';
 
 export default function Page() {
+    const { books, isLoading } = useBooks();
     const categories = [
         {
             title: 'All Books',
@@ -177,10 +179,10 @@ export default function Page() {
                                 className="text-3xl font-bold text-purple-600 mb-2"
                                 data-oid="g.yg9hw"
                             >
-                                4
+                                {isLoading ? '...' : books.length}
                             </div>
                             <div className="text-gray-600 text-sm" data-oid="_4a0xn5">
-                                Categories
+                                Total Books
                             </div>
                         </div>
                         <div className="text-center" data-oid="mxewiau">
@@ -188,10 +190,12 @@ export default function Page() {
                                 className="text-3xl font-bold text-green-600 mb-2"
                                 data-oid=":0zglgx"
                             >
-                                ∞
+                                {isLoading
+                                    ? '...'
+                                    : books.filter((book) => book.status === 'Read').length}
                             </div>
                             <div className="text-gray-600 text-sm" data-oid="4t4g9gt">
-                                Possibilities
+                                Books Read
                             </div>
                         </div>
                         <div className="text-center" data-oid="30ij1si">
@@ -199,10 +203,13 @@ export default function Page() {
                                 className="text-3xl font-bold text-blue-600 mb-2"
                                 data-oid="q5oocj:"
                             >
-                                📖
+                                {isLoading
+                                    ? '...'
+                                    : books.filter((book) => book.status === 'Currently Reading')
+                                          .length}
                             </div>
                             <div className="text-gray-600 text-sm" data-oid="o6a00eo">
-                                Reading
+                                Currently Reading
                             </div>
                         </div>
                         <div className="text-center" data-oid="7c0pc-e">
@@ -210,10 +217,12 @@ export default function Page() {
                                 className="text-3xl font-bold text-yellow-600 mb-2"
                                 data-oid="gki09t."
                             >
-                                🎯
+                                {isLoading
+                                    ? '...'
+                                    : books.filter((book) => book.status === 'Want to Read').length}
                             </div>
                             <div className="text-gray-600 text-sm" data-oid="3624qht">
-                                Goals
+                                Want to Read
                             </div>
                         </div>
                     </div>
