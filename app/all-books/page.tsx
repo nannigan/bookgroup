@@ -11,10 +11,13 @@ export default function AllBooksPage() {
     const {
         books,
         isLoading,
+        isOnline,
+        lastSync,
         addBook,
         updateBook,
         deleteBook,
         resetToDefaults,
+        forceSync,
         exportBooks,
         importBooks,
     } = useBooks();
@@ -73,10 +76,10 @@ export default function AllBooksPage() {
         const file = event.target.files?.[0];
         if (file) {
             const reader = new FileReader();
-            reader.onload = (e) => {
+            reader.onload = async (e) => {
                 const result = e.target?.result;
                 if (typeof result === 'string') {
-                    const success = importBooks(result);
+                    const success = await importBooks(result);
                     if (success) {
                         alert('Books imported successfully!');
                     } else {
@@ -158,6 +161,22 @@ export default function AllBooksPage() {
                             </Link>
                         </div>
                         <div className="flex items-center space-x-4" data-oid="zu6-2bd">
+                            {/* Connection Status */}
+                            <div className="flex items-center space-x-2" data-oid="dhdiwvc">
+                                <div
+                                    className={`w-2 h-2 rounded-full ${isOnline ? 'bg-green-500' : 'bg-red-500'}`}
+                                    data-oid="f44dowi"
+                                ></div>
+                                <span className="text-xs text-gray-500" data-oid="_bunde7">
+                                    {isOnline ? 'Online' : 'Offline'}
+                                </span>
+                                {lastSync && (
+                                    <span className="text-xs text-gray-400" data-oid="-ftet90">
+                                        • Last sync: {new Date(lastSync).toLocaleTimeString()}
+                                    </span>
+                                )}
+                            </div>
+
                             <Link
                                 href="/"
                                 className="text-gray-600 hover:text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
@@ -165,6 +184,18 @@ export default function AllBooksPage() {
                             >
                                 ← Back to Home
                             </Link>
+
+                            {isOnline && (
+                                <button
+                                    onClick={forceSync}
+                                    className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+                                    title="Sync with shared data"
+                                    data-oid="r4aqr22"
+                                >
+                                    🔄
+                                </button>
+                            )}
+
                             <button
                                 onClick={() => setShowImportExport(true)}
                                 className="text-gray-600 hover:text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
@@ -518,6 +549,53 @@ export default function AllBooksPage() {
                                 >
                                     🔄 Reset to Defaults
                                 </button>
+                            </div>
+
+                            <div data-oid="-2sbod9">
+                                <h3 className="font-semibold text-gray-700 mb-2" data-oid="c758amb">
+                                    Connection Status
+                                </h3>
+                                <div className="space-y-2 text-sm" data-oid="ru.ussw">
+                                    <div
+                                        className="flex items-center justify-between"
+                                        data-oid="v4dt49a"
+                                    >
+                                        <span data-oid=":91axzs">Status:</span>
+                                        <span
+                                            className={`px-2 py-1 rounded text-xs ${
+                                                isOnline
+                                                    ? 'bg-green-100 text-green-800'
+                                                    : 'bg-red-100 text-red-800'
+                                            }`}
+                                            data-oid="ozf5vwh"
+                                        >
+                                            {isOnline ? 'Online' : 'Offline'}
+                                        </span>
+                                    </div>
+                                    <div
+                                        className="flex items-center justify-between"
+                                        data-oid="yby8u-_"
+                                    >
+                                        <span data-oid="x8vaibs">Books:</span>
+                                        <span className="text-gray-600" data-oid="0r4wt9u">
+                                            {books.length} total
+                                        </span>
+                                    </div>
+                                    {lastSync && (
+                                        <div
+                                            className="flex items-center justify-between"
+                                            data-oid="h1zk:tf"
+                                        >
+                                            <span data-oid="15vm6u2">Last Sync:</span>
+                                            <span
+                                                className="text-gray-600 text-xs"
+                                                data-oid="vc4t:oj"
+                                            >
+                                                {new Date(lastSync).toLocaleString()}
+                                            </span>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         </div>
 
