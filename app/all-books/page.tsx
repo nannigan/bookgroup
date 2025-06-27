@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { getStatusColor } from '../../lib/books-data';
 import { useBooks } from '../../lib/useBooks';
 import { JSONBinStatus } from '../../components/JSONBinStatus';
+import { Book, BookFormData } from '../../lib/types';
 
 export default function AllBooksPage() {
     const {
@@ -19,8 +20,8 @@ export default function AllBooksPage() {
     } = useBooks();
 
     const [showAddForm, setShowAddForm] = useState(false);
-    const [editingBook, setEditingBook] = useState(null);
-    const [newBook, setNewBook] = useState({
+    const [editingBook, setEditingBook] = useState<Book | null>(null);
+    const [newBook, setNewBook] = useState<BookFormData>({
         title: '',
         author: '',
         genre: '',
@@ -28,7 +29,7 @@ export default function AllBooksPage() {
         comment: '',
     });
     const [showImportExport, setShowImportExport] = useState(false);
-    const fileInputRef = useRef(null);
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
     const handleAddBook = () => {
         if (newBook.title && newBook.author) {
@@ -37,9 +38,15 @@ export default function AllBooksPage() {
         }
     };
 
-    const handleEditBook = (book) => {
+    const handleEditBook = (book: Book) => {
         setEditingBook(book);
-        setNewBook({ ...book });
+        setNewBook({
+            title: book.title,
+            author: book.author,
+            genre: book.genre,
+            status: book.status,
+            comment: book.comment,
+        });
         setShowAddForm(true);
     };
 
@@ -50,7 +57,7 @@ export default function AllBooksPage() {
         }
     };
 
-    const handleDeleteBook = (id) => {
+    const handleDeleteBook = (id: number | string) => {
         if (confirm('Are you sure you want to delete this book?')) {
             deleteBook(id);
         }
@@ -62,16 +69,19 @@ export default function AllBooksPage() {
         setShowAddForm(false);
     };
 
-    const handleImportBooks = (event) => {
-        const file = event.target.files[0];
+    const handleImportBooks = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
         if (file) {
             const reader = new FileReader();
             reader.onload = (e) => {
-                const success = importBooks(e.target.result);
-                if (success) {
-                    alert('Books imported successfully!');
-                } else {
-                    alert('Error importing books. Please check the file format.');
+                const result = e.target?.result;
+                if (typeof result === 'string') {
+                    const success = importBooks(result);
+                    if (success) {
+                        alert('Books imported successfully!');
+                    } else {
+                        alert('Error importing books. Please check the file format.');
+                    }
                 }
             };
             reader.readAsText(file);
