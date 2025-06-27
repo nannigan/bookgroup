@@ -27,7 +27,7 @@ didn't really work easily... took too long and showed error messages that seem t
       param: null,
       code: 'invalid_request_error'
     }
-Also console on localhost showed gooey errors     
+Also console on localhost showed glooey errors     
 
 lots of llms to chose from but curently
 seems like way more trouble than it's worth going down endless rabbit holes for--- 
