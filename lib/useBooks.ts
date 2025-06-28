@@ -215,7 +215,6 @@ export function useBooks() {
         getBooksByStatus,
         resetToDefaults,
         forceSync,
-        testConnection,
         exportBooks,
         importBooks,
     };
