@@ -2,7 +2,26 @@
 
 import { JSONBinStorage } from './jsonbin-storage';
 
+interface TestResult {
+    success: boolean;
+    message?: string;
+    booksCount?: number;
+    latency?: number;
+    error?: string;
+}
+
+interface TestResults {
+    read: TestResult | null;
+    write: TestResult | null;
+    binInfo: TestResult | null;
+    latency: number | null;
+    errors: string[];
+}
+
 export class ConnectionTest {
+    private storage: JSONBinStorage;
+    public testResults: TestResults;
+
     constructor() {
         this.storage = new JSONBinStorage();
         this.testResults = {
@@ -14,7 +33,7 @@ export class ConnectionTest {
         };
     }
 
-    async runFullTest() {
+    async runFullTest(): Promise<TestResults> {
         console.log('🧪 Starting JSONBin connection test...');
         this.testResults.errors = [];
 
@@ -35,14 +54,14 @@ export class ConnectionTest {
 
             console.log('✅ Connection test completed successfully');
             return this.testResults;
-        } catch (error) {
+        } catch (error: any) {
             console.error('❌ Connection test failed:', error);
             this.testResults.errors.push(`Test failed: ${error.message}`);
             return this.testResults;
         }
     }
 
-    async testReadAccess() {
+    private async testReadAccess(): Promise<void> {
         console.log('📖 Testing read access...');
         const readStart = Date.now();
 
@@ -61,7 +80,7 @@ export class ConnectionTest {
             } else {
                 throw new Error('Read returned null');
             }
-        } catch (error) {
+        } catch (error: any) {
             this.testResults.read = {
                 success: false,
                 error: error.message,
@@ -72,7 +91,7 @@ export class ConnectionTest {
         }
     }
 
-    async testWriteAccess() {
+    private async testWriteAccess(): Promise<void> {
         console.log('✏️ Testing write access...');
         const writeStart = Date.now();
 
@@ -86,7 +105,7 @@ export class ConnectionTest {
                 title: 'Connection Test Book',
                 author: 'Test Author',
                 genre: 'Test',
-                status: 'Want to Read',
+                status: 'Want to Read' as const,
                 comment: 'This is a test book created during connection testing',
             };
 
@@ -116,7 +135,7 @@ export class ConnectionTest {
             } else {
                 throw new Error('Write operation returned false');
             }
-        } catch (error) {
+        } catch (error: any) {
             this.testResults.write = {
                 success: false,
                 error: error.message,
@@ -127,7 +146,7 @@ export class ConnectionTest {
         }
     }
 
-    async testBinInfo() {
+    private async testBinInfo(): Promise<void> {
         console.log('ℹ️ Testing bin information...');
 
         try {
@@ -136,9 +155,6 @@ export class ConnectionTest {
             if (binInfo) {
                 this.testResults.binInfo = {
                     success: true,
-                    isPublic: binInfo.isPublic,
-                    name: binInfo.name,
-                    createdAt: binInfo.createdAt,
                     message: `Bin info retrieved: ${binInfo.name} (${binInfo.isPublic ? 'Public' : 'Private'})`,
                 };
                 console.log('✅ Bin info test passed:', binInfo);
@@ -149,7 +165,7 @@ export class ConnectionTest {
                 };
                 console.log('⚠️ Bin info test: No information available');
             }
-        } catch (error) {
+        } catch (error: any) {
             this.testResults.binInfo = {
                 success: false,
                 error: error.message,
@@ -162,7 +178,7 @@ export class ConnectionTest {
     getTestSummary() {
         const { read, write, binInfo, latency, errors } = this.testResults;
 
-        const summary = {
+        return {
             overall: errors.length === 0 ? 'success' : 'failed',
             readStatus: read?.success ? 'pass' : 'fail',
             writeStatus: write?.success ? 'pass' : 'fail',
@@ -171,11 +187,9 @@ export class ConnectionTest {
             errorCount: errors.length,
             errors: errors,
         };
-
-        return summary;
     }
 
-    generateReport() {
+    generateReport(): string {
         const summary = this.getTestSummary();
 
         let report = '📊 JSONBin Connection Test Report\n';
@@ -216,7 +230,7 @@ export async function quickConnectionTest() {
                     : `❌ ${summary.errorCount} test(s) failed`,
             details: results,
         };
-    } catch (error) {
+    } catch (error: any) {
         return {
             success: false,
             message: `❌ Test failed: ${error.message}`,
@@ -225,29 +239,40 @@ export async function quickConnectionTest() {
     }
 }
 
+// Connection status interface
+interface ConnectionStatus {
+    isConnected: boolean;
+    timestamp: string;
+    booksCount?: number;
+    error?: string;
+}
+
 // Continuous monitoring function
 export class ConnectionMonitor {
-    constructor(interval = 30000) {
+    private interval: number;
+    private isMonitoring: boolean = false;
+    private callbacks: Array<(status: ConnectionStatus) => void> = [];
+    private lastStatus: ConnectionStatus | null = null;
+    private intervalId?: NodeJS.Timeout;
+
+    constructor(interval: number = 30000) {
         // 30 seconds default
         this.interval = interval;
-        this.isMonitoring = false;
-        this.callbacks = [];
-        this.lastStatus = null;
     }
 
-    addCallback(callback) {
+    addCallback(callback: (status: ConnectionStatus) => void): void {
         this.callbacks.push(callback);
     }
 
-    removeCallback(callback) {
+    removeCallback(callback: (status: ConnectionStatus) => void): void {
         this.callbacks = this.callbacks.filter((cb) => cb !== callback);
     }
 
-    async checkConnection() {
+    async checkConnection(): Promise<ConnectionStatus> {
         try {
             const storage = new JSONBinStorage();
             const books = await storage.getBooks();
-            const status = {
+            const status: ConnectionStatus = {
                 isConnected: books !== null,
                 timestamp: new Date().toISOString(),
                 booksCount: books?.length || 0,
@@ -260,8 +285,8 @@ export class ConnectionMonitor {
 
             this.lastStatus = status;
             return status;
-        } catch (error) {
-            const status = {
+        } catch (error: any) {
+            const status: ConnectionStatus = {
                 isConnected: false,
                 timestamp: new Date().toISOString(),
                 error: error.message,
@@ -276,7 +301,7 @@ export class ConnectionMonitor {
         }
     }
 
-    start() {
+    start(): void {
         if (this.isMonitoring) return;
 
         this.isMonitoring = true;
@@ -289,7 +314,7 @@ export class ConnectionMonitor {
         console.log(`📡 Connection monitoring started (${this.interval}ms interval)`);
     }
 
-    stop() {
+    stop(): void {
         if (!this.isMonitoring) return;
 
         this.isMonitoring = false;

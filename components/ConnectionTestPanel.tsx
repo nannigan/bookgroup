@@ -3,9 +3,17 @@
 import { useState } from 'react';
 import { ConnectionTest, quickConnectionTest } from '../lib/connection-test';
 
+interface TestResult {
+    success: boolean;
+    message: string;
+    details?: any;
+    summary?: any;
+    report?: string;
+}
+
 export function ConnectionTestPanel() {
     const [isTestRunning, setIsTestRunning] = useState(false);
-    const [testResults, setTestResults] = useState(null);
+    const [testResults, setTestResults] = useState<TestResult | null>(null);
     const [showDetails, setShowDetails] = useState(false);
 
     const runQuickTest = async () => {
