@@ -18,6 +18,7 @@ export function useBooks() {
     // Load books on mount - try JSONBin first, fallback to localStorage
     useEffect(() => {
         loadBooks();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     // Set up online/offline detection
@@ -36,7 +37,8 @@ export function useBooks() {
             window.removeEventListener('online', handleOnline);
             window.removeEventListener('offline', handleOffline);
         };
-    }, [books]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const loadBooks = async () => {
         try {

@@ -331,7 +331,7 @@ export default function AllBooksPage() {
                                             className="text-sm text-gray-700 italic"
                                             data-oid="tzq0ce0"
                                         >
-                                            "{book.comment}"
+                                            &ldquo;{book.comment}&rdquo;
                                         </p>
                                     </div>
                                 )}

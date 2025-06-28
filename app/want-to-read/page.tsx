@@ -147,7 +147,7 @@ export default function WantToReadPage() {
                             No books on your wishlist
                         </h3>
                         <p className="text-gray-600 mb-6" data-oid="-40a-je">
-                            Add some books you'd like to read in the future!
+                            Add some books you&apos;d like to read in the future!
                         </p>
                         <Link
                             href="/all-books"
