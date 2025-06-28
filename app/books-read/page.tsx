@@ -130,7 +130,7 @@ export default function BooksReadPage() {
                                                 className="text-sm text-gray-700 italic"
                                                 data-oid="9:-3b4t"
                                             >
-                                                "{book.comment}"
+                                                &ldquo;{book.comment}&rdquo;
                                             </p>
                                         </div>
                                     )}

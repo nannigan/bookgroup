@@ -89,8 +89,8 @@ export default function Page() {
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto" data-oid="d:zxa35">
                         Organize your reading journey by exploring different categories of books.
-                        Track what you've read, what you're currently reading, and plan your future
-                        reads.
+                        Track what you&apos;ve read, what you&apos;re currently reading, and plan
+                        your future reads.
                     </p>
                 </div>
 

@@ -130,7 +130,7 @@ export default function WantToReadPage() {
                                                 className="text-sm text-gray-700 italic"
                                                 data-oid="nk1xl5g"
                                             >
-                                                "{book.comment}"
+                                                &ldquo;{book.comment}&rdquo;
                                             </p>
                                         </div>
                                     )}
