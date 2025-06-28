@@ -242,11 +242,13 @@ export function ConnectionTestPanel() {
                                                 className="text-red-600 text-xs space-y-1"
                                                 data-oid="jk1r0m:"
                                             >
-                                                {testResults.details.errors.map((error, index) => (
-                                                    <li key={index} data-oid="oaks6s1">
-                                                        • {error}
-                                                    </li>
-                                                ))}
+                                                {testResults.details.errors.map(
+                                                    (error: string, index: number) => (
+                                                        <li key={index} data-oid="oaks6s1">
+                                                            • {error}
+                                                        </li>
+                                                    ),
+                                                )}
                                             </ul>
                                         </div>
                                     )}
