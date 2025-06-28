@@ -5,20 +5,19 @@ import { testJSONBinAccess } from '../lib/jsonbin-storage';
 
 export function JSONBinStatus() {
     const [status, setStatus] = useState('testing');
-    const [error, setError] = useState(null);
 
     useEffect(() => {
         checkJSONBinStatus();
     }, []);
 
     const checkJSONBinStatus = async () => {
-        try {
-            const isWorking = await testJSONBinAccess();
-            setStatus(isWorking ? 'connected' : 'failed');
-        } catch (error) {
-            setStatus('failed');
-            setError(error.message);
-        }
+        const isWorking = await testJSONBinAccess();
+        setStatus(isWorking ? 'connected' : 'failed');
+    };
+
+    const retryConnection = () => {
+        setStatus('testing');
+        checkJSONBinStatus();
     };
 
     if (status === 'testing') {
@@ -65,22 +64,29 @@ export function JSONBinStatus() {
             className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6"
             data-oid="z63x0tk"
         >
-            <div className="flex items-center" data-oid="a_7y13c">
-                <div className="w-4 h-4 bg-yellow-500 rounded-full mr-3" data-oid="v:id5_8"></div>
-                <div className="text-yellow-800" data-oid="rbuzifa">
-                    <p className="font-medium" data-oid="rbsi2pr">
-                        Using local storage only
-                    </p>
-                    <p className="text-sm" data-oid="l2_m2j.">
-                        Shared data unavailable. Your changes will be saved locally but won't sync
-                        with other members.
-                        {error && (
-                            <span className="block mt-1" data-oid="k5:ozv7">
-                                Error: {error}
-                            </span>
-                        )}
-                    </p>
+            <div className="flex items-center justify-between" data-oid="a_7y13c">
+                <div className="flex items-center" data-oid="pkx25q2">
+                    <div
+                        className="w-4 h-4 bg-yellow-500 rounded-full mr-3"
+                        data-oid="v:id5_8"
+                    ></div>
+                    <div className="text-yellow-800" data-oid="rbuzifa">
+                        <p className="font-medium" data-oid="rbsi2pr">
+                            Using local storage only
+                        </p>
+                        <p className="text-sm" data-oid="l2_m2j.">
+                            Shared data unavailable. Your changes will be saved locally but won't
+                            sync with other members.
+                        </p>
+                    </div>
                 </div>
+                <button
+                    onClick={retryConnection}
+                    className="text-yellow-700 hover:text-yellow-900 text-sm underline"
+                    data-oid="hx91t4h"
+                >
+                    Retry
+                </button>
             </div>
         </div>
     );
