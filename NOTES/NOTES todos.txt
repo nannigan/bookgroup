@@ -1,21 +1,6 @@
-NOTES misc 
-
-
-using with vscode- seems like AI will work 
-
-Onlook 
-
-It's open source.
-
-Onlook subscribed 6-20-25 @ $20/mo
-and todos
-
-can I use mySQL with node and react app ? yes https://www.perplexity.ai/search/can-i-incorporate-a-mysql-data-olmqRHAkSDi_lXMIbAoifg
-
-???what about json file(s) -- no auth wanted really
-
-????ask 123ehost about hosting node/express app
 
 add search field to at least 'all' page
 	+ by title author ??? 
+
+ditch old pinned repos on GitHub
 
