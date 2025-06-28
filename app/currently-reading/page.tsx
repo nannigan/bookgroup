@@ -127,7 +127,7 @@ export default function CurrentlyReadingPage() {
                                                 className="text-sm text-gray-700 italic"
                                                 data-oid=":h7dk:b"
                                             >
-                                                "{book.comment}"
+                                                &ldquo;{book.comment}&rdquo;
                                             </p>
                                         </div>
                                     )}
