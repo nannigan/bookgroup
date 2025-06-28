@@ -24,9 +24,10 @@ export function ConnectionTestPanel() {
             const result = await quickConnectionTest();
             setTestResults(result);
         } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
             setTestResults({
                 success: false,
-                message: `Test failed: ${error.message}`,
+                message: `Test failed: ${errorMessage}`,
                 details: null,
             });
         } finally {
@@ -55,9 +56,10 @@ export function ConnectionTestPanel() {
             });
             setShowDetails(true);
         } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
             setTestResults({
                 success: false,
-                message: `Test failed: ${error.message}`,
+                message: `Test failed: ${errorMessage}`,
                 details: null,
             });
         } finally {
