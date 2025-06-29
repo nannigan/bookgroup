@@ -62,7 +62,7 @@ export default function Page() {
                             </div>
                             <div data-oid="s34ze2d">
                                 <h1 className="text-2xl font-bold text-gray-900" data-oid="za09zu7">
-                                    BookGroup
+                                    Resistor Sisters Bookgroup
                                 </h1>
                                 <p className="text-sm text-gray-600" data-oid="ci7h0-u">
                                     Say here kitty kitty, and you will find your next favorite book!
@@ -85,12 +85,10 @@ export default function Page() {
                 {/* Welcome Section */}
                 <div className="text-center mb-12" data-oid="v_a.ws5">
                     <h2 className="text-3xl font-bold text-gray-900 mb-4" data-oid="zkl1g-p">
-                        Welcome to Your Personal Library
+                        Welcome to All the Books in One Place!
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto" data-oid="kqf5rza">
-                        Organize your reading journey by exploring different categories of books.
-                        Track what you&apos;ve read, what you&apos;re currently reading, and plan
-                        your future reads.
+                        Organize organize  organize
                     </p>
                 </div>
 

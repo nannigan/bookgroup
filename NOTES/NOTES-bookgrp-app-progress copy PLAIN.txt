@@ -5,6 +5,16 @@ learning too!!!
 
 6-28-25 ditched ResisterSistersBookgroup repository to get vscode to git to correct repo... in git note thing
 now it's up 
+added github actions extension--
+
+lots of to and fro with git and workflows to get it up
+Can I change the name
+
+git simple workflow:
+git add .
+git commit -m "Resolve merge conflicts"
+git push origin main
+
 
 6-27-25 Using Onlook-  see last git stuff in chat history
 JSONbin not sure how it is integrated
