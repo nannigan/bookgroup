@@ -3,6 +3,8 @@ import path from 'path';
 const nextConfig = {
     output: 'export',
     trailingSlash: true,
+    basePath: '/bookgroup',
+    assetPrefix: '/bookgroup/',
     images: {
         unoptimized: true,
     },
