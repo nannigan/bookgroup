@@ -1,4 +1,8 @@
 learning too!!!
+
+
+
+
 6-28-25 ditched ResisterSistersBookgroup repository to get vscode to git to correct repo... in git note thing
 now it's up 
 
