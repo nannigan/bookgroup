@@ -1,0 +1,112 @@
+learning too!!!
+6-28-25 ditched ResisterSistersBookgroup repository to get vscode to git to correct repo... in git note thing
+now it's up 
+
+6-27-25 Using Onlook-  see last git stuff in chat history
+JSONbin not sure how it is integrated
+
+Used git integration in VScode to  push code up but it went to /bookgroup instead of the newly created ResisterSistersBooks repository
+trouble shooting git stuff- want to change origin in vscode to newly created ResisterSistersBooks repository so can use git tool in vscode- not working git merge conflicts?
+
+Also can I just upload the ‘out’ directory (contents) created with rpm run build to GitHub repository- NO looks like simple static pages only
+
+
+trying to get GitHub pages running at  https://nannigan.github.io/ResistorSistersBooks/
+
+via https://github.com/nannigan/ResistorSistersBooks/settings/pages
+
+
+lots of erroring out of rpm run build not sure if it’s about just typescript junk but EVENTUALLY is ran run build successfully
+
+
+The build should now complete successfully! You can deploy the out folder to GitHub Pages and your book club members can start using it immediately.
+📚 How it Works:
+	1	Admin deploys to GitHub Pages
+	2	Members visit the URL
+	3	Everyone can add/edit books instantly
+	4	Data syncs automatically between all users
+
+
+JSONBin supposed to be easy set up with GH pages which is an easy way to deploy React app
+After ‘discussion’ decided to use JSONBin.io free tier- signed up to JSONBin using with github 
+
+https://github.com/gitname/react-gh-pages 
+—how to set up GitHub pages for React app
+
+
+
+with db not JSONbin -see above————————————————————————————————————————before 6-27-25———
+ hOW TOhow to build db (categories attributes  ....)
+	+make it without 1 by 1 entries
+how to edit from cpanel?
+how to hook up to app which will live where?
+
+
+In cpanel on nannigans.com created db called nannigan_ResistorSisterBooks
+username: nannigan  (nannigan_nannigan)
+pw:JDN.ycz.pyp5zqc5uwh  (in 1Pass Nannigans db from cpanel
+
+
+cpanel server info: https://cpanel.nannigans.com/cpsess7025742821/frontend/jupiter/tools/status.html
+
+Item
+Detail
+Hosting Package
+basic
+Server Name
+drive350
+cPanel Version
+128.0 (build 14)
+Apache Version
+2.4.63
+Database Version
+8.0.42
+Architecture
+x86_64
+Operating System
+linux
+Shared IP Address
+64.118.88.26
+Path to Sendmail
+/usr/sbin/sendmail
+Path to Perl
+/usr/bin/perl
+Perl Version
+5.26.3
+Kernel Version
+4.18.0-553.40.1.el8_10.x86_64
+
+
+mySQL  ??  yes, https://www.perplexity.ai/search/can-i-incorporate-a-mysql-data-olmqRHAkSDi_lXMIbAoifg
+
+Creating a web app for your book club is a fantastic idea! Below is a high-level overview of the steps you'll need to take to build this application. I'll outline the basic components and technologies you can use to achieve your goals.
+
+Step 1: Define Requirements
+
+User Authentication: Allow users to sign up, log in, and manage their profiles.
+
+Book Database: Store book information such as title, author, genre, summary, and possibly reviews.
+
+Add/Edit Books: Allow users to add new books to the database and edit existing entries.
+
+View/Search Books: Provide a way for users to view and search for books in the database.
+
+Book Club Features: Additional features like discussion forums, reading lists, and meeting schedules.
+
+Step 2: Choose Your Tech Stack
+Frontend: React.js or Vue.js
+Backend: Node.js with Express.js or Django
+Database: PostgreSQL or MongoDB ??
+Authentication: JWT (JSON Web Tokens) or OAuth2
+Deployment: Hosting services like Heroku, AWS, or Netlify
+Step 3: Set Up Your Development Environment
+Install Node.js and npm: Download from Node.js.
+Install a Database: Install PostgreSQL or MongoDB on your local machine.
+Create a Project Directory: Set up a folder for your project.
+Step 4: Build the Backend
+Initialize a Node.js Project:
+
+
+...........................
+https://baserow.io/templates/book-catalog 
+online database creation-display not sure if/how it could be integrated
