@@ -1,10 +1,13 @@
 import path from 'path';
+
+const isProd = process.env.NODE_ENV === 'production';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export',
     trailingSlash: true,
-    basePath: '/bookgroup',
-    assetPrefix: '/bookgroup/',
+    basePath: isProd ? '/bookgroup' : '',
+    assetPrefix: isProd ? '/bookgroup/' : '',
     images: {
         unoptimized: true,
     },
