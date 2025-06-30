@@ -1,3 +1,17 @@
+figure out JSON
+	how to convert existing files>csv>json?
+	how to add into app -- conveniently located Manage Data modal in All Books page has import books button
+
+how to get jsonbin to work- now just local storage
+
+fix UI to my aesthetic liking
+how to use var css tools
+
+
+Do something with or hide Quick Overview card
+maybe possibilities instead of want to read
+
+https://nannigan.github.io/bookgroup/
 
 add search field to at least 'all' page
 	+ by title author ??? 

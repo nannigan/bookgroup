@@ -1,5 +1,6 @@
 learning too!!!
 
+https://nannigan.github.io/bookgroup/
 
 
 
@@ -10,7 +11,9 @@ added github actions extension--
 lots of to and fro with git and workflows to get it up
 Can I change the name
 
-git simple workflow:
+my edits in Onlook interface simple workflow to live:
+in VSCode
+nom run build
 git add .
 git commit -m "Resolve merge conflicts"
 git push origin main
