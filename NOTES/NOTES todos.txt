@@ -1,4 +1,8 @@
 figure out JSON
+
+
+JSONbin needs APT key see copy of message in onlook_sites folder (up 2 from here)
+then
 	how to convert existing files>csv>json?
 	how to add into app -- conveniently located Manage Data modal in All Books page has import books button
 
