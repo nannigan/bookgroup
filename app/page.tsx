@@ -3,6 +3,8 @@
 import Link from 'next/link';
 
 export default function Page() {
+    // Temporary debug - remove this after testing
+    console.log('API Key loaded:', process.env.NEXT_PUBLIC_JSONBIN_API_KEY ? 'Yes' : 'No');
     const categories = [
         {
             title: 'All Books',
