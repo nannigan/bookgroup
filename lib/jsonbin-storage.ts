@@ -1,7 +1,7 @@
 'use client';
 
 // Public JSONBin configuration - no API key needed for users!
-const PUBLIC_BIN_ID = '676b8e8ead19ca34f8d4b8a7'; // This will be our shared bin
+const PUBLIC_BIN_ID = 'YOUR_NEW_BIN_ID_HERE'; // This will be our shared bin
 const BASE_URL = 'https://api.jsonbin.io/v3';
 
 // Option 2: Private Bin with Shared API Key (More secure)

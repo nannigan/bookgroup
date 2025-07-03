@@ -5,6 +5,16 @@ import Link from 'next/link';
 export default function Page() {
     // Temporary debug - remove this after testing
     console.log('API Key loaded:', process.env.NEXT_PUBLIC_JSONBIN_API_KEY ? 'Yes' : 'No');
+
+    // Temporary: Create bin button for testing
+    const createBin = async () => {
+        const storage = new (await import('../lib/jsonbin-storage')).JSONBinStorage();
+        const newBinId = await storage.createPublicBin([]);
+        if (newBinId) {
+            console.log('New bin created with ID:', newBinId);
+            alert(`New bin created! Update PUBLIC_BIN_ID to: ${newBinId}`);
+        }
+    };
     const categories = [
         {
             title: 'All Books',
