@@ -1,8 +1,14 @@
-learning too!!!
+
+my edits in Onlook interface simple workflow to live:
+in VSCode
+nom run build
+git add .
+git commit -m "Resolve merge conflicts"
+git push origin main
 
 https://nannigan.github.io/bookgroup/
 
-7-2-25
+7-2-25  
 trying to implement jsonbin
 turns out API key I used in .ev.local and in GitHub pages secrets had a $ as the first character which is a mistake I copied in- shouldn't start with $
 fixed both of those things- 
@@ -14,6 +20,10 @@ went back to JSONbin and create new bin there with json from current dummy books
 got and bin id and put it in /lib/jsonbin-storage.ts
 // Public JSONBin configuration - no API key needed for users!
 const PUBLIC_BIN_ID = '6865e4868561e97a50308e97';
+
+pushed all to GitHub
+still getting local storage only on local host an Pages 
+
 
 
 
