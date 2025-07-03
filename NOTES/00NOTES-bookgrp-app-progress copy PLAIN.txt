@@ -2,6 +2,13 @@ learning too!!!
 
 https://nannigan.github.io/bookgroup/
 
+7-2-25
+trying to implement jsonbin
+turns out API key I used in .ev.local and in GitHub pages secrets had a $ as the first character which is a mistake I copied in- shouldn't start with $
+fixed both of those things- 
+NOW
+git hub shows failure of deployment 
+localhost:300 from 5pm run dev in vscode still shows using local storage
 
 
 6-28-25 ditched ResisterSistersBookgroup repository to get vscode to git to correct repo... in git note thing
