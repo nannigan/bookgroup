@@ -3,18 +3,6 @@
 import Link from 'next/link';
 
 export default function Page() {
-    // Temporary debug - remove this after testing
-    console.log('API Key loaded:', process.env.NEXT_PUBLIC_JSONBIN_API_KEY ? 'Yes' : 'No');
-
-    // Temporary: Create bin button for testing
-    const createBin = async () => {
-        const storage = new (await import('../lib/jsonbin-storage')).JSONBinStorage();
-        const newBinId = await storage.createPublicBin([]);
-        if (newBinId) {
-            console.log('New bin created with ID:', newBinId);
-            alert(`New bin created! Update PUBLIC_BIN_ID to: ${newBinId}`);
-        }
-    };
     const categories = [
         {
             title: 'All Books',
@@ -94,21 +82,7 @@ export default function Page() {
                         Organize organize  organize
                     </p>
                 </div>
-                <div className="flex gap-2">
-                    <button
-                        onClick={createBin}
-                        className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 text-sm"
-                    >
-                        Create Bin
-                    </button>
-                    <Link
-                        href="/all-books"
-                        className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg"
-                        data-oid="1ctppm2"
-                    >
-                        Manage Books
-                    </Link>
-                </div>
+
                 {/* Category Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {categories.map((category, index) => (

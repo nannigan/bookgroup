@@ -9,6 +9,13 @@ fixed both of those things-
 NOW
 git hub shows failure of deployment 
 localhost:300 from 5pm run dev in vscode still shows using local storage
+tried following directions to programatically add a bin and get it's id that wayNO GO
+went back to JSONbin and create new bin there with json from current dummy books
+got and bin id and put it in /lib/jsonbin-storage.ts
+// Public JSONBin configuration - no API key needed for users!
+const PUBLIC_BIN_ID = '6865e4868561e97a50308e97';
+
+
 
 
 6-28-25 ditched ResisterSistersBookgroup repository to get vscode to git to correct repo... in git note thing
