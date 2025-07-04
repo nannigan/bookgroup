@@ -1,19 +1,19 @@
 
-my edits in Onlook interface simple workflow to live:
-in VSCode
-nom run build
+
+pretty sure git actions includes build and got run failed emails from GitHub while it seems like something I tried did not fail... ie run dev followed by git commands when I made updates locally
 git add .
-git commit -m "Resolve merge conflicts"
+git commit -m "whatever"
 git push origin main
 
 https://nannigan.github.io/bookgroup/
+//////////////////////////////////////////////////////////////////////////////////
 
 7-2-25  
 trying to implement jsonbin
 turns out API key I used in .ev.local and in GitHub pages secrets had a $ as the first character which is a mistake I copied in- shouldn't start with $
 fixed both of those things- 
 NOW
-git hub shows failure of deployment 
+git hub shows failure of deployment notices
 localhost:300 from 5pm run dev in vscode still shows using local storage
 tried following directions to programatically add a bin and get it's id that wayNO GO
 went back to JSONbin and create new bin there with json from current dummy books
