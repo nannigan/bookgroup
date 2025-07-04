@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { DebugJSONBin } from '../components/DebugJSONBin';
+import { EnvTest } from '../components/EnvTest';
 
 export default function Page() {
     const categories = [
@@ -46,26 +47,26 @@ export default function Page() {
     return (
         <div
             className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100"
-            data-oid=":ah1yll"
+            data-oid="zqk79rm"
         >
             {/* Header */}
-            <header className="bg-white shadow-sm border-b border-purple-100" data-oid="deo5rw:">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-oid="q6.nbw3">
-                    <div className="flex items-center justify-between" data-oid="o:iuq8:">
-                        <div className="flex items-center space-x-3" data-oid="g-6x_c.">
+            <header className="bg-white shadow-sm border-b border-purple-100" data-oid="50ewj6w">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-oid="pbof292">
+                    <div className="flex items-center justify-between" data-oid="sqsv.o-">
+                        <div className="flex items-center space-x-3" data-oid="8c7947n">
                             <div
                                 className="w-10 h-10 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center"
-                                data-oid="dk:v_f3"
+                                data-oid="nnlu_ad"
                             >
-                                <span className="text-white font-bold text-lg" data-oid="8tfkzco">
+                                <span className="text-white font-bold text-lg" data-oid="nu:yd-i">
                                     📚
                                 </span>
                             </div>
-                            <div data-oid="d42qf9h">
-                                <h1 className="text-2xl font-bold text-gray-900" data-oid="5hhkgn_">
+                            <div data-oid="3g:mfgh">
+                                <h1 className="text-2xl font-bold text-gray-900" data-oid="l7d_uzl">
                                     Resistor Sisters Bookgroup
                                 </h1>
-                                <p className="text-sm text-gray-600" data-oid=":32wecr">
+                                <p className="text-sm text-gray-600" data-oid="9qkg1x2">
                                     Say here kitty kitty, and you will find your next favorite book!
                                 </p>
                             </div>
@@ -73,7 +74,7 @@ export default function Page() {
                         <Link
                             href="/all-books"
                             className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg"
-                            data-oid="z8l-ej2"
+                            data-oid="pv5lcx3"
                         >
                             Manage Books
                         </Link>
@@ -82,16 +83,17 @@ export default function Page() {
             </header>
 
             {/* Main Content */}
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-oid="msp9c09">
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-oid="gxjgcli">
                 {/* Debug Section - Remove this after debugging */}
-                <DebugJSONBin data-oid="ivprwtq" />
+                <EnvTest data-oid="n1.1duu" />
+                <DebugJSONBin data-oid="sjdzks-" />
 
                 {/* Welcome Section */}
-                <div className="text-center mb-12" data-oid="fu.8w87">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4" data-oid="web2-kc">
+                <div className="text-center mb-12" data-oid="g.xls_7">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4" data-oid="wec1mc-">
                         Welcome to All the Books in One Place!
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto" data-oid="x9n:bsh">
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto" data-oid="wx74e63">
                         Organize organize  organize
                     </p>
                 </div>
@@ -99,45 +101,45 @@ export default function Page() {
                 {/* Category Cards */}
                 <div
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-                    data-oid="33-ho1u"
+                    data-oid="24nr1o3"
                 >
                     {categories.map((category, index) => (
                         <Link
                             key={index}
                             href={category.href}
                             className="group block"
-                            data-oid="wq9480y"
+                            data-oid="sz7snqe"
                         >
                             <div
                                 className={`bg-white rounded-xl p-8 shadow-sm border ${category.borderColor} hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`}
-                                data-oid="rp4h9ju"
+                                data-oid="q_k:g_t"
                             >
-                                <div className="text-center" data-oid="xmo.a3e">
+                                <div className="text-center" data-oid="_g0:3ub">
                                     <div
                                         className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-full flex items-center justify-center mx-auto mb-4`}
-                                        data-oid="x7-puzs"
+                                        data-oid="3q8hf59"
                                     >
-                                        <span className="text-2xl" data-oid="of48-6k">
+                                        <span className="text-2xl" data-oid="z73f_l_">
                                             {category.icon}
                                         </span>
                                     </div>
                                     <h3
                                         className={`text-xl font-bold ${category.textColor} mb-2`}
-                                        data-oid="m78mcra"
+                                        data-oid="ep6d8.5"
                                     >
                                         {category.title}
                                     </h3>
                                     <p
                                         className="text-gray-600 text-sm leading-relaxed"
-                                        data-oid="dynlnpd"
+                                        data-oid="ifj.4hr"
                                     >
                                         {category.description}
                                     </p>
                                 </div>
-                                <div className="mt-6 text-center" data-oid="24l0:du">
+                                <div className="mt-6 text-center" data-oid="gud7r3l">
                                     <span
                                         className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r ${category.color} text-white group-hover:shadow-md transition-shadow duration-200`}
-                                        data-oid="b5zjaye"
+                                        data-oid="ak0jn95"
                                     >
                                         Explore
                                         <svg
@@ -145,14 +147,14 @@ export default function Page() {
                                             fill="none"
                                             stroke="currentColor"
                                             viewBox="0 0 24 24"
-                                            data-oid="e-xd5ge"
+                                            data-oid="krs.f_9"
                                         >
                                             <path
                                                 strokeLinecap="round"
                                                 strokeLinejoin="round"
                                                 strokeWidth={2}
                                                 d="M9 5l7 7-7 7"
-                                                data-oid="rnp6hqs"
+                                                data-oid="fmno-:e"
                                             />
                                         </svg>
                                     </span>
@@ -165,56 +167,56 @@ export default function Page() {
                 {/* Quick Stats Section */}
                 <div
                     className="mt-16 bg-white rounded-xl p-8 shadow-sm border border-gray-100"
-                    data-oid="tb3c:y2"
+                    data-oid="w.7_.bj"
                 >
                     <h3
                         className="text-2xl font-bold text-gray-900 text-center mb-8"
-                        data-oid="74ym5he"
+                        data-oid="eqcepju"
                     >
                         what shall we use this for or not?
                     </h3>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6" data-oid="hy46emc">
-                        <div className="text-center" data-oid=":.mzefn">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6" data-oid="ry87m:r">
+                        <div className="text-center" data-oid="plk2twj">
                             <div
                                 className="text-3xl font-bold text-purple-600 mb-2"
-                                data-oid="msrz2-s"
+                                data-oid="stdkhgr"
                             >
                                 4
                             </div>
-                            <div className="text-gray-600 text-sm" data-oid="qq6cill">
+                            <div className="text-gray-600 text-sm" data-oid="u.osyby">
                                 Categories
                             </div>
                         </div>
-                        <div className="text-center" data-oid="ygtz5bz">
+                        <div className="text-center" data-oid="jzl4:p6">
                             <div
                                 className="text-3xl font-bold text-green-600 mb-2"
-                                data-oid="pi3edox"
+                                data-oid="2zbx79n"
                             >
                                 ∞
                             </div>
-                            <div className="text-gray-600 text-sm" data-oid="ofrobz4">
+                            <div className="text-gray-600 text-sm" data-oid="z-42s.-">
                                 Possibilities
                             </div>
                         </div>
-                        <div className="text-center" data-oid="bv:6awe">
+                        <div className="text-center" data-oid="ctl26:s">
                             <div
                                 className="text-3xl font-bold text-blue-600 mb-2"
-                                data-oid="2nndo6t"
+                                data-oid="9bo_ogs"
                             >
                                 📖
                             </div>
-                            <div className="text-gray-600 text-sm" data-oid="fh:.ms:">
+                            <div className="text-gray-600 text-sm" data-oid="bep2-xy">
                                 Reading
                             </div>
                         </div>
-                        <div className="text-center" data-oid="ctqvnko">
+                        <div className="text-center" data-oid="0r8biw4">
                             <div
                                 className="text-3xl font-bold text-yellow-600 mb-2"
-                                data-oid="5ykj3hz"
+                                data-oid="-t-z0mw"
                             >
                                 🎯
                             </div>
-                            <div className="text-gray-600 text-sm" data-oid="yet2-p6">
+                            <div className="text-gray-600 text-sm" data-oid="26x3au7">
                                 Goals
                             </div>
                         </div>
