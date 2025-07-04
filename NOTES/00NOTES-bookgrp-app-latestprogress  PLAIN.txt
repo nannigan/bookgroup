@@ -9,13 +9,7 @@ https://nannigan.github.io/bookgroup/
 //////////////////////////////////////////////////////////////////////////////////
 
 7-4-25
-Actually, you don't run npm run dev anywhere when using Onlook!
 
-To restart the dev server in Onlook, you would:
-
-Stop the project in Onlook (there should be a stop button or option in the Onlook interface)
-Start it again in Onlook (using Onlook's start/run button)
-Onlook manages the dev server for you automatically - you don't need to use any terminal commands. The restart happens entirely within the Onlook application interface.
 
 
 

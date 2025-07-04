@@ -1,0 +1,31 @@
+Actually, you don't run npm run dev anywhere when using Onlook!
+
+To restart the dev server in Onlook, you would:
+
+Stop the project in Onlook (there should be a stop button or option in the Onlook interface)
+Start it again in Onlook (using Onlook's start/run button)
+Onlook manages the dev server for you automatically - you don't need to use any terminal commands. The restart happens entirely within the Onlook application interface.
+
+localhost:3000/
+
+No, you don't run git commands in Onlook.
+
+For git operations, you would use:
+
+Terminal/Command Line - Open a terminal, navigate to your project folder (/Users/nandesnorg/Desktop/LLMs/onlook_sites/bookgroup), and run git commands like git add ., git commit -m "message", git push, etc.
+
+VSCode - If you have VSCode open, you can use its built-in Git interface (Source Control panel) or the integrated terminal
+
+Git GUI applications - Like GitHub Desktop, SourceTree, etc.
+
+Onlook is specifically for:
+
+Running the dev server
+Visual editing of your React components
+Live preview and design changes
+Everything else (git, npm install, file management, etc.) you do through your normal development tools - terminal, VSCode, etc.
+
+So to summarize:
+
+Onlook: Dev server, visual editing
+Terminal/VSCode: Git, npm commands, file operations
