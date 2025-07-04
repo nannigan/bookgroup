@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { DebugJSONBin } from '../components/DebugJSONBin';
-import { EnvTest } from '../components/EnvTest';
 
 export default function Page() {
     const categories = [
