@@ -1,11 +1,18 @@
 'use client';
 
-// Your actual JSONBin configuration
-const BIN_ID = '6865e4868561e97a50308e97'; // Replace with your actual bin ID
+// Your actual JSONBin configuration  
+const BIN_ID = '6865e4868561e97a50308e97'; // Your actual bin ID
 const BASE_URL = 'https://api.jsonbin.io/v3';
 
 // Get API key from environment variables
 const JSONBIN_API_KEY = process.env.NEXT_PUBLIC_JSONBIN_API_KEY;
+
+// Debug logging to see what we're getting
+console.log('Environment check:', {
+    hasApiKey: !!JSONBIN_API_KEY,
+    apiKeyPrefix: JSONBIN_API_KEY?.substring(0, 10) + '...',
+    binId: BIN_ID
+});
 =======
 
 export class JSONBinStorage {
@@ -25,7 +32,8 @@ export class JSONBinStorage {
         console.log('JSONBin Storage initialized:', {
             binId: this.binId,
             hasApiKey: this.hasApiKey,
-            apiKeyLength: JSONBIN_API_KEY?.length || 0
+            apiKeyLength: JSONBIN_API_KEY?.length || 0,
+            headers: this.baseHeaders
         });
     }
 =======
@@ -141,7 +149,10 @@ export class JSONBinStorage {
 
 // Test function to verify the bin is working
 export async function testJSONBinAccess(): Promise<boolean> {
+    console.log('Testing JSONBin access...');
     const storage = new JSONBinStorage();
     const books = await storage.getBooks();
-    return books !== null && Array.isArray(books);
+    const isWorking = books !== null && Array.isArray(books);
+    console.log('JSONBin test result:', { isWorking, booksCount: books?.length });
+    return isWorking;
 }
