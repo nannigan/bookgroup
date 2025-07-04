@@ -44,15 +44,15 @@ export function DebugJSONBin() {
     };
 
     return (
-        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6" data-oid="2:1tg71">
-            <h3 className="font-bold mb-2" data-oid="9nb:c3y">
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6" data-oid="bxdfnh.">
+            <h3 className="font-bold mb-2" data-oid=".0idtfq">
                 JSONBin Debug Info
             </h3>
             <button
                 onClick={runDebugTest}
                 disabled={isLoading}
                 className="bg-blue-500 text-white px-4 py-2 rounded mb-4 disabled:opacity-50"
-                data-oid="tqahcqu"
+                data-oid="2pj66oh"
             >
                 {isLoading ? 'Testing...' : 'Run Debug Test'}
             </button>
@@ -60,7 +60,7 @@ export function DebugJSONBin() {
             {debugInfo && (
                 <pre
                     className="bg-white p-2 rounded text-xs overflow-auto max-h-96"
-                    data-oid="ntefwm3"
+                    data-oid=".-tsawf"
                 >
                     {JSON.stringify(debugInfo, null, 2)}
                 </pre>

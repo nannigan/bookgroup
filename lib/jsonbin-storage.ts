@@ -60,3 +60,10 @@ export class JSONBinStorage {
         }
     }
 }
+
+// Test function to verify the bin is working
+export async function testJSONBinAccess(): Promise<boolean> {
+    const storage = new JSONBinStorage();
+    const books = await storage.getBooks();
+    return books !== null && Array.isArray(books);
+}
