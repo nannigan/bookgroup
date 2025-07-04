@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { DebugJSONBin } from '../components/DebugJSONBin';
 
 export default function Page() {
     const categories = [
@@ -82,6 +83,9 @@ export default function Page() {
 
             {/* Main Content */}
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-oid="qz6jpmr">
+                {/* Debug Section - Remove this after debugging */}
+                <DebugJSONBin data-oid="tf7xf3h" />
+
                 {/* Welcome Section */}
                 <div className="text-center mb-12" data-oid="gzcz1w5">
                     <h2 className="text-3xl font-bold text-gray-900 mb-4" data-oid=":4rkjb9">
