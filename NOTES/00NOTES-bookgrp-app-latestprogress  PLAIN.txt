@@ -28,7 +28,7 @@ https://nannigan.github.io/bookgroup/
 
 7-2-25  
 trying to implement jsonbin
-turns out API key I used in .ev.local and in GitHub pages secrets had a $ as the first character which is a mistake I copied in- shouldn't start with $
+
 fixed both of those things- 
 NOW
 git hub shows failure of deployment notices
