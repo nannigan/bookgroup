@@ -1,19 +1,11 @@
 'use client';
 
-// Your actual JSONBin configuration  
-const BIN_ID = '6865e4868561e97a50308e97'; // Your actual bin ID
+// Your actual JSONBin configuration
+const BIN_ID = '6865e4868561e97a50308e97'; // Replace with your actual bin ID
 const BASE_URL = 'https://api.jsonbin.io/v3';
 
 // Get API key from environment variables
 const JSONBIN_API_KEY = process.env.NEXT_PUBLIC_JSONBIN_API_KEY;
-
-// Debug logging to see what we're getting
-console.log('Environment check:', {
-    hasApiKey: !!JSONBIN_API_KEY,
-    apiKeyPrefix: JSONBIN_API_KEY?.substring(0, 10) + '...',
-    binId: BIN_ID
-});
-=======
 
 export class JSONBinStorage {
     private binId: string;
@@ -27,31 +19,29 @@ export class JSONBinStorage {
             'Content-Type': 'application/json',
             ...(JSONBIN_API_KEY && { 'X-Master-Key': JSONBIN_API_KEY }),
         };
-        
+
         // Debug logging
         console.log('JSONBin Storage initialized:', {
             binId: this.binId,
             hasApiKey: this.hasApiKey,
             apiKeyLength: JSONBIN_API_KEY?.length || 0,
-            headers: this.baseHeaders
         });
     }
-=======
 
     async getBooks() {
         try {
             console.log('Fetching books from JSONBin...', {
                 binId: this.binId,
                 hasApiKey: this.hasApiKey,
-                url: `${BASE_URL}/b/${this.binId}/latest`
+                url: `${BASE_URL}/b/${this.binId}/latest`,
             });
-            
+
             const response = await fetch(`${BASE_URL}/b/${this.binId}/latest`, {
                 headers: this.baseHeaders,
             });
 
             console.log('JSONBin response status:', response.status);
-            
+
             if (!response.ok) {
                 const errorText = await response.text();
                 console.warn(`JSONBin fetch failed with status: ${response.status}`, errorText);
@@ -66,7 +56,6 @@ export class JSONBinStorage {
             return null; // Will fallback to localStorage
         }
     }
-=======
 
     async saveBooks(books: any[]) {
         try {
@@ -149,10 +138,7 @@ export class JSONBinStorage {
 
 // Test function to verify the bin is working
 export async function testJSONBinAccess(): Promise<boolean> {
-    console.log('Testing JSONBin access...');
     const storage = new JSONBinStorage();
     const books = await storage.getBooks();
-    const isWorking = books !== null && Array.isArray(books);
-    console.log('JSONBin test result:', { isWorking, booksCount: books?.length });
-    return isWorking;
+    return books !== null && Array.isArray(books);
 }
