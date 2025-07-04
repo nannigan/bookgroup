@@ -1,46 +1,64 @@
 'use client';
 
-// Public JSONBin configuration - no API key needed for users!
-const PUBLIC_BIN_ID = '6865e4868561e97a50308e97'; // This will be our shared bin
+// Your actual JSONBin configuration
+const BIN_ID = '6865e4868561e97a50308e97'; // Replace with your actual bin ID
 const BASE_URL = 'https://api.jsonbin.io/v3';
 
-// Option 2: Private Bin with Shared API Key (More secure)
+// Get API key from environment variables
 const JSONBIN_API_KEY = process.env.NEXT_PUBLIC_JSONBIN_API_KEY;
+=======
 
 export class JSONBinStorage {
     private binId: string;
     private baseHeaders: Record<string, string>;
-    private isPublic: boolean;
+    private hasApiKey: boolean;
 
     constructor() {
-        this.binId = PUBLIC_BIN_ID;
+        this.binId = BIN_ID;
+        this.hasApiKey = !!JSONBIN_API_KEY;
         this.baseHeaders = {
             'Content-Type': 'application/json',
             ...(JSONBIN_API_KEY && { 'X-Master-Key': JSONBIN_API_KEY }),
         };
-        this.isPublic = !JSONBIN_API_KEY;
+        
+        // Debug logging
+        console.log('JSONBin Storage initialized:', {
+            binId: this.binId,
+            hasApiKey: this.hasApiKey,
+            apiKeyLength: JSONBIN_API_KEY?.length || 0
+        });
     }
+=======
 
     async getBooks() {
         try {
-            console.log('Fetching books from JSONBin...');
+            console.log('Fetching books from JSONBin...', {
+                binId: this.binId,
+                hasApiKey: this.hasApiKey,
+                url: `${BASE_URL}/b/${this.binId}/latest`
+            });
+            
             const response = await fetch(`${BASE_URL}/b/${this.binId}/latest`, {
-                headers: this.isPublic ? { 'Content-Type': 'application/json' } : this.baseHeaders,
+                headers: this.baseHeaders,
             });
 
+            console.log('JSONBin response status:', response.status);
+            
             if (!response.ok) {
-                console.warn(`JSONBin fetch failed with status: ${response.status}`);
+                const errorText = await response.text();
+                console.warn(`JSONBin fetch failed with status: ${response.status}`, errorText);
                 return null; // Will fallback to localStorage
             }
 
             const data = await response.json();
-            console.log('Successfully fetched books from JSONBin');
+            console.log('Successfully fetched books from JSONBin:', data);
             return data.record?.books || [];
         } catch (error) {
             console.warn('Error fetching books from JSONBin:', error);
             return null; // Will fallback to localStorage
         }
     }
+=======
 
     async saveBooks(books: any[]) {
         try {
