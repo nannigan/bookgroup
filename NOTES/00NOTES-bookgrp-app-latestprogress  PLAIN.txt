@@ -9,6 +9,19 @@ https://nannigan.github.io/bookgroup/
 //////////////////////////////////////////////////////////////////////////////////
 
 7-4-25
+{
+  "envApiKey": "Present",
+  "envApiKeyLength": 53,
+  "responseStatus": 401,
+  "responseHeaders": {
+    "content-length": "79",
+    "content-type": "application/json; charset=utf-8"
+  },
+  "responseBody": "{\"message\":\"X-Master-Key is invalid or the bin doesn't belong to your account\"}",
+  "timestamp": "2025-07-04T22:31:09.626Z"
+}
+
+
 
 
 
