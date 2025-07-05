@@ -18,16 +18,16 @@ export function JSONBinStatus() {
         return (
             <div
                 className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6"
-                data-oid="k6_rov-"
+                data-oid="9.mh-wn"
             >
                 {' '}
-                <div className="flex items-center" data-oid="9:3y06q">
+                <div className="flex items-center" data-oid="y1_-ka6">
                     {' '}
                     <div
                         className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600 mr-3"
-                        data-oid="goi4mrf"
+                        data-oid="79fj3wk"
                     ></div>{' '}
-                    <span className="text-blue-800" data-oid="fp5fhum">
+                    <span className="text-blue-800" data-oid="__vqx3k">
                         {' '}
                         Testing shared data connection...{' '}
                     </span>{' '}
@@ -39,16 +39,16 @@ export function JSONBinStatus() {
         return (
             <div
                 className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6"
-                data-oid="8p82ie0"
+                data-oid="92:-v.5"
             >
                 {' '}
-                <div className="flex items-center" data-oid="4yf4ngy">
+                <div className="flex items-center" data-oid="-fkv5xz">
                     {' '}
                     <div
                         className="w-4 h-4 bg-green-500 rounded-full mr-3"
-                        data-oid="0b14hox"
+                        data-oid="zsjeugn"
                     ></div>{' '}
-                    <span className="text-green-800" data-oid="k9_ak2i">
+                    <span className="text-green-800" data-oid="o7x6gwz">
                         {' '}
                         ✅ Connected to shared book data! Changes will be visible to all book club
                         members.{' '}
@@ -60,24 +60,24 @@ export function JSONBinStatus() {
     return (
         <div
             className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6"
-            data-oid="gcphtrs"
+            data-oid="n9__-gc"
         >
             {' '}
-            <div className="flex items-center justify-between" data-oid="t.6_:nv">
+            <div className="flex items-center justify-between" data-oid="lq6pbgu">
                 {' '}
-                <div className="flex items-center" data-oid="900ep.w">
+                <div className="flex items-center" data-oid="wdl2m0v">
                     {' '}
                     <div
                         className="w-4 h-4 bg-yellow-500 rounded-full mr-3"
-                        data-oid="gr-5tkw"
+                        data-oid="lrtiq0_"
                     ></div>{' '}
-                    <div className="text-yellow-800" data-oid="_ysltq8">
+                    <div className="text-yellow-800" data-oid=":9uv:tm">
                         {' '}
-                        <p className="font-medium" data-oid="aav597_">
+                        <p className="font-medium" data-oid="28oqfzz">
                             {' '}
                             Using local storage only{' '}
                         </p>{' '}
-                        <p className="text-sm" data-oid="lbjfw2.">
+                        <p className="text-sm" data-oid="h_a1j8a">
                             {' '}
                             Shared data unavailable. Your changes will be saved locally but
                             won&apos;t sync with other members.{' '}
@@ -87,7 +87,7 @@ export function JSONBinStatus() {
                 <button
                     onClick={retryConnection}
                     className="text-yellow-700 hover:text-yellow-900 text-sm underline"
-                    data-oid="_:k:.o7"
+                    data-oid="1epkjap"
                 >
                     {' '}
                     Retry{' '}
