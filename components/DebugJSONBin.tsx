@@ -30,7 +30,7 @@ export function DebugJSONBin() {
                 envApiKeyLength: process.env.NEXT_PUBLIC_JSONBIN_API_KEY?.length || 0,
                 apiKeyFirst10: process.env.NEXT_PUBLIC_JSONBIN_API_KEY?.substring(0, 10) || '',
                 apiKeyFirst20: process.env.NEXT_PUBLIC_JSONBIN_API_KEY?.substring(0, 20) || '',
-                startsWithDollar: process.env.NEXT_PUBLIC_JSONBIN_API_KEY?.startsWith('
+                startsWithDollar: process.env.NEXT_PUBLIC_JSONBIN_API_KEY?.startsWith('$') || false,
                 startsWithExpected: process.env.NEXT_PUBLIC_JSONBIN_API_KEY?.startsWith('$2a$10$ZE.') || false,
                 charCodes: process.env.NEXT_PUBLIC_JSONBIN_API_KEY?.substring(0, 10).split('').map(c => c.charCodeAt(0)) || [],
                 createBinStatus: createResponse.status,
