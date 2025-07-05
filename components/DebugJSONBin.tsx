@@ -9,6 +9,8 @@ export function DebugJSONBin() {
         setIsLoading(true);
         try {
             const apiKey = process.env.NEXT_PUBLIC_JSONBIN_API_KEY;
+            const testVar = process.env.NEXT_PUBLIC_TEST;
+
             setDebugInfo({
                 envApiKey: apiKey ? 'Present' : 'Missing',
                 envApiKeyLength: apiKey?.length || 0,
@@ -16,12 +18,19 @@ export function DebugJSONBin() {
                 startsWithDollar: apiKey?.startsWith('$') || false,
                 startsWithExpected: apiKey?.startsWith('$2a$10$ZE') || false,
                 fullApiKey: apiKey,
+                testVar: testVar,
                 allEnvVars: Object.keys(process.env).filter(
-                    (key) => key.includes('JSONBIN') || key.includes('API') || key.includes('KEY'),
+                    (key) =>
+                        key.includes('JSONBIN') ||
+                        key.includes('API') ||
+                        key.includes('KEY') ||
+                        key.includes('TEST'),
                 ),
                 allNextPublicVars: Object.keys(process.env).filter((key) =>
                     key.startsWith('NEXT_PUBLIC_'),
                 ),
+                allEnvKeys: Object.keys(process.env).slice(0, 10), // First 10 env vars
+                nodeEnv: process.env.NODE_ENV,
                 timestamp: new Date().toISOString(),
             });
         } catch (error: any) {
@@ -31,22 +40,22 @@ export function DebugJSONBin() {
     };
 
     return (
-        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6" data-oid="ki4b3j_">
-            <h3 className="font-bold mb-2" data-oid="kewbyni">
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6" data-oid="e-niqyp">
+            <h3 className="font-bold mb-2" data-oid="0z.hlp6">
                 JSONBin Debug Info
             </h3>
             <button
                 onClick={runDebugTest}
                 disabled={isLoading}
                 className="bg-blue-500 text-white px-4 py-2 rounded mb-4 disabled:opacity-50"
-                data-oid="58-ytku"
+                data-oid="_3yd6p9"
             >
                 {isLoading ? 'Testing...' : 'Run Debug Test'}
             </button>
             {debugInfo && (
                 <pre
                     className="bg-white p-2 rounded text-xs overflow-auto max-h-96"
-                    data-oid="si4xms_"
+                    data-oid="ng8_v9s"
                 >
                     {JSON.stringify(debugInfo, null, 2)}
                 </pre>
