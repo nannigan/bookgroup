@@ -8,28 +8,20 @@ export function DebugJSONBin() {
     const runDebugTest = async () => {
         setIsLoading(true);
         try {
-            const apiKey = process.env.NEXT_PUBLIC_JSONBIN_API_KEY;
-            const testVar = process.env.NEXT_PUBLIC_TEST;
+            // Let's trace exactly what's happening
+            const directAccess = process.env.NEXT_PUBLIC_JSONBIN_API_KEY;
+            const processEnvKeys = Object.keys(process.env);
+            const hasProperty = process.env.hasOwnProperty('NEXT_PUBLIC_JSONBIN_API_KEY');
+            const viaIndex = process.env['NEXT_PUBLIC_JSONBIN_API_KEY'];
 
             setDebugInfo({
-                envApiKey: apiKey ? 'Present' : 'Missing',
-                envApiKeyLength: apiKey?.length || 0,
-                apiKeyFirst20: apiKey?.substring(0, 20) || '',
-                startsWithDollar: apiKey?.startsWith('$') || false,
-                startsWithExpected: apiKey?.startsWith('$2a$10$ZE') || false,
-                fullApiKey: apiKey,
-                testVar: testVar,
-                allEnvVars: Object.keys(process.env).filter(
-                    (key) =>
-                        key.includes('JSONBIN') ||
-                        key.includes('API') ||
-                        key.includes('KEY') ||
-                        key.includes('TEST'),
-                ),
-                allNextPublicVars: Object.keys(process.env).filter((key) =>
-                    key.startsWith('NEXT_PUBLIC_'),
-                ),
-                allEnvKeys: Object.keys(process.env).slice(0, 10), // First 10 env vars
+                directAccess: directAccess,
+                viaIndex: viaIndex,
+                hasProperty: hasProperty,
+                processEnvType: typeof process.env,
+                processEnvKeys: processEnvKeys,
+                processEnvLength: processEnvKeys.length,
+                firstFewKeys: processEnvKeys.slice(0, 5),
                 nodeEnv: process.env.NODE_ENV,
                 timestamp: new Date().toISOString(),
             });
@@ -40,22 +32,22 @@ export function DebugJSONBin() {
     };
 
     return (
-        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6" data-oid="e-niqyp">
-            <h3 className="font-bold mb-2" data-oid="0z.hlp6">
-                JSONBin Debug Info
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6" data-oid="k_hjuoy">
+            <h3 className="font-bold mb-2" data-oid="xxj088_">
+                Environment Debug
             </h3>
             <button
                 onClick={runDebugTest}
                 disabled={isLoading}
                 className="bg-blue-500 text-white px-4 py-2 rounded mb-4 disabled:opacity-50"
-                data-oid="_3yd6p9"
+                data-oid="u4t0pt."
             >
-                {isLoading ? 'Testing...' : 'Run Debug Test'}
+                {isLoading ? 'Testing...' : 'Debug Environment'}
             </button>
             {debugInfo && (
                 <pre
                     className="bg-white p-2 rounded text-xs overflow-auto max-h-96"
-                    data-oid="ng8_v9s"
+                    data-oid="1:7:fop"
                 >
                     {JSON.stringify(debugInfo, null, 2)}
                 </pre>
