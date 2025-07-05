@@ -31,22 +31,22 @@ export function DebugJSONBin() {
     };
 
     return (
-        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6" data-oid="hg-prl.">
-            <h3 className="font-bold mb-2" data-oid="7:gcgh2">
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6" data-oid="5f6q-2q">
+            <h3 className="font-bold mb-2" data-oid="yndchbn">
                 JSONBin Debug Info
             </h3>
             <button
                 onClick={runDebugTest}
                 disabled={isLoading}
                 className="bg-blue-500 text-white px-4 py-2 rounded mb-4 disabled:opacity-50"
-                data-oid="rbcb.y6"
+                data-oid="gcxybqt"
             >
                 {isLoading ? 'Testing...' : 'Run Debug Test'}
             </button>
             {debugInfo && (
                 <pre
                     className="bg-white p-2 rounded text-xs overflow-auto max-h-96"
-                    data-oid="mb4gm_p"
+                    data-oid=":23aclz"
                 >
                     {JSON.stringify(debugInfo, null, 2)}
                 </pre>
