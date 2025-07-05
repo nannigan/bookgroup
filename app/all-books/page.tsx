@@ -106,14 +106,14 @@ export default function AllBooksPage() {
         return (
             <div
                 className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 flex items-center justify-center"
-                data-oid="._cpphc"
+                data-oid="pi6.-6."
             >
-                <div className="text-center" data-oid="guu5nld">
+                <div className="text-center" data-oid=".fiq:df">
                     <div
                         className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"
-                        data-oid="r5aj38e"
+                        data-oid="gw1qbh9"
                     ></div>
-                    <p className="text-gray-600" data-oid="ree-ew:">
+                    <p className="text-gray-600" data-oid="l:d1zwe">
                         Loading your books...
                     </p>
                 </div>
@@ -124,54 +124,54 @@ export default function AllBooksPage() {
     return (
         <div
             className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100"
-            data-oid="4mvl0d3"
+            data-oid="-o26vpc"
         >
             {/* Header */}
-            <header className="bg-white shadow-sm border-b border-purple-100" data-oid="ke86kjd">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-oid="s3fm:tv">
-                    <div className="flex items-center justify-between" data-oid="-l.pfjl">
-                        <div className="flex items-center space-x-3" data-oid="z9ccpu.">
+            <header className="bg-white shadow-sm border-b border-purple-100" data-oid="eeh81wb">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-oid="pmcbvww">
+                    <div className="flex items-center justify-between" data-oid="2yf7enj">
+                        <div className="flex items-center space-x-3" data-oid="0:ri-t_">
                             <Link
                                 href="/"
                                 className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
-                                data-oid="4aivyfl"
+                                data-oid="2c4wjdl"
                             >
                                 <div
                                     className="w-10 h-10 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center"
-                                    data-oid="66yz8j."
+                                    data-oid="wn7r5eo"
                                 >
                                     <span
                                         className="text-white font-bold text-lg"
-                                        data-oid="31awgyb"
+                                        data-oid="l9n-gj2"
                                     >
                                         📚
                                     </span>
                                 </div>
-                                <div data-oid="44g02az">
+                                <div data-oid="cnnqbhk">
                                     <h1
                                         className="text-2xl font-bold text-gray-900"
-                                        data-oid="c:oj1mj"
+                                        data-oid="r2032p7"
                                     >
                                         All Books
                                     </h1>
-                                    <p className="text-sm text-gray-600" data-oid="uvoy:of">
+                                    <p className="text-sm text-gray-600" data-oid="j65v90z">
                                         Your complete book collection
                                     </p>
                                 </div>
                             </Link>
                         </div>
-                        <div className="flex items-center space-x-4" data-oid="s0-s66i">
+                        <div className="flex items-center space-x-4" data-oid="iry.tj-">
                             {/* Connection Status */}
-                            <div className="flex items-center space-x-2" data-oid="n18_u8n">
+                            <div className="flex items-center space-x-2" data-oid=":11:pvp">
                                 <div
                                     className={`w-2 h-2 rounded-full ${isOnline ? 'bg-green-500' : 'bg-red-500'}`}
-                                    data-oid="3zp9t6j"
+                                    data-oid="2i9s1pf"
                                 ></div>
-                                <span className="text-xs text-gray-500" data-oid="zss7:27">
+                                <span className="text-xs text-gray-500" data-oid="xaiysen">
                                     {isOnline ? 'Online' : 'Offline'}
                                 </span>
                                 {lastSync && (
-                                    <span className="text-xs text-gray-400" data-oid="s6d0w_:">
+                                    <span className="text-xs text-gray-400" data-oid="2h5fz4g">
                                         • Last sync: {new Date(lastSync).toLocaleTimeString()}
                                     </span>
                                 )}
@@ -180,7 +180,7 @@ export default function AllBooksPage() {
                             <Link
                                 href="/"
                                 className="text-gray-600 hover:text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
-                                data-oid="c8dm4dk"
+                                data-oid="1j:b9z7"
                             >
                                 ← Back to Home
                             </Link>
@@ -190,7 +190,7 @@ export default function AllBooksPage() {
                                     onClick={forceSync}
                                     className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
                                     title="Sync with shared data"
-                                    data-oid="rh4q:70"
+                                    data-oid="jqgld4y"
                                 >
                                     🔄
                                 </button>
@@ -199,14 +199,14 @@ export default function AllBooksPage() {
                             <button
                                 onClick={() => setShowImportExport(true)}
                                 className="text-gray-600 hover:text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
-                                data-oid="gzyyj-s"
+                                data-oid="lle0gao"
                             >
                                 ⚙️ Manage Data
                             </button>
                             <button
                                 onClick={() => setShowAddForm(true)}
                                 className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg"
-                                data-oid="-as2e2o"
+                                data-oid="swgjk-m"
                             >
                                 + Add Book
                             </button>
@@ -216,56 +216,56 @@ export default function AllBooksPage() {
             </header>
 
             {/* Main Content */}
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-oid=".v6tpbg">
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-oid="vgix0vz">
                 {/* Connection Status */}
-                <JSONBinStatus data-oid="625lgs0" />
+                <JSONBinStatus data-oid="6in7exa" />
 
                 {/* Stats */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8" data-oid="yklg85.">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8" data-oid="x9zvybv">
                     <div
                         className="bg-white rounded-xl p-6 shadow-sm border border-purple-100"
-                        data-oid="72:0o0-"
+                        data-oid="68d_094"
                     >
-                        <div className="text-2xl font-bold text-purple-600" data-oid=":292s0t">
+                        <div className="text-2xl font-bold text-purple-600" data-oid="64ais49">
                             {books.length}
                         </div>
-                        <div className="text-gray-600" data-oid="tkp4fdg">
+                        <div className="text-gray-600" data-oid="-ix473u">
                             Total Books
                         </div>
                     </div>
                     <div
                         className="bg-white rounded-xl p-6 shadow-sm border border-green-100"
-                        data-oid="q_qkfl5"
+                        data-oid="nw-z:xe"
                     >
-                        <div className="text-2xl font-bold text-green-600" data-oid="jhiz:9n">
+                        <div className="text-2xl font-bold text-green-600" data-oid="kfm6912">
                             {books.filter((book: Book) => book.status === 'Read').length}
                         </div>
-                        <div className="text-gray-600" data-oid="lvggog.">
+                        <div className="text-gray-600" data-oid="r:p:03:">
                             Books Read
                         </div>
                     </div>
                     <div
                         className="bg-white rounded-xl p-6 shadow-sm border border-blue-100"
-                        data-oid="e-oi4ns"
+                        data-oid="v4_2z59"
                     >
-                        <div className="text-2xl font-bold text-blue-600" data-oid="uezx6qq">
+                        <div className="text-2xl font-bold text-blue-600" data-oid="5zvy2cq">
                             {
                                 books.filter((book: Book) => book.status === 'Currently Reading')
                                     .length
                             }
                         </div>
-                        <div className="text-gray-600" data-oid="ab-2g6g">
+                        <div className="text-gray-600" data-oid="8-hk2ad">
                             Currently Reading
                         </div>
                     </div>
                     <div
                         className="bg-white rounded-xl p-6 shadow-sm border border-yellow-100"
-                        data-oid=":59albu"
+                        data-oid="q0cmzbl"
                     >
-                        <div className="text-2xl font-bold text-yellow-600" data-oid="wrbo1bt">
+                        <div className="text-2xl font-bold text-yellow-600" data-oid="-qqk5ya">
                             {books.filter((book: Book) => book.status === 'Want to Read').length}
                         </div>
-                        <div className="text-gray-600" data-oid="k7:2gdr">
+                        <div className="text-gray-600" data-oid="knufnkb">
                             Want to Read
                         </div>
                     </div>
@@ -274,62 +274,62 @@ export default function AllBooksPage() {
                 {/* Books Grid */}
                 <div
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                    data-oid="t9sdumy"
+                    data-oid="xvorj4x"
                 >
                     {books.map((book: Book) => (
                         <div
                             key={book.id}
                             className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200"
-                            data-oid="m:vz01t"
+                            data-oid="8_f.raj"
                         >
                             <div
                                 className="flex justify-between items-start mb-4"
-                                data-oid="we7r1bh"
+                                data-oid="5o12kdj"
                             >
-                                <div className="flex-1" data-oid="16cfm-k">
+                                <div className="flex-1" data-oid="tmw.pei">
                                     <h3
                                         className="text-lg font-semibold text-gray-900 mb-1"
-                                        data-oid="szgp6:3"
+                                        data-oid="8tmhij9"
                                     >
                                         {book.title}
                                     </h3>
-                                    <p className="text-gray-600 mb-2" data-oid="edhuunp">
+                                    <p className="text-gray-600 mb-2" data-oid="gfzqggt">
                                         by {book.author}
                                     </p>
-                                    <span className="text-sm text-gray-500" data-oid="48ow83c">
+                                    <span className="text-sm text-gray-500" data-oid="lgii83s">
                                         {book.genre}
                                     </span>
                                 </div>
-                                <div className="flex space-x-2" data-oid="19ciotr">
+                                <div className="flex space-x-2" data-oid="wxq0q1c">
                                     <button
                                         onClick={() => handleEditBook(book)}
                                         className="text-indigo-600 hover:text-indigo-800 text-sm"
-                                        data-oid="x5a55ag"
+                                        data-oid=".kyyznn"
                                     >
                                         Edit
                                     </button>
                                     <button
                                         onClick={() => handleDeleteBook(book.id)}
                                         className="text-red-600 hover:text-red-800 text-sm"
-                                        data-oid="h19sasy"
+                                        data-oid="ojitnj5"
                                     >
                                         Delete
                                     </button>
                                 </div>
                             </div>
 
-                            <div className="space-y-3" data-oid="ynkc_-y">
+                            <div className="space-y-3" data-oid="yvzkwse">
                                 <span
                                     className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(book.status)}`}
-                                    data-oid="xslk8b."
+                                    data-oid="36obmib"
                                 >
                                     {book.status}
                                 </span>
                                 {book.comment && (
-                                    <div className="bg-gray-50 p-3 rounded-lg" data-oid="u39t-jp">
+                                    <div className="bg-gray-50 p-3 rounded-lg" data-oid="j1btq86">
                                         <p
                                             className="text-sm text-gray-700 italic"
-                                            data-oid="hkt.r9h"
+                                            data-oid="cpa3717"
                                         >
                                             &ldquo;{book.comment}&rdquo;
                                         </p>
@@ -345,18 +345,18 @@ export default function AllBooksPage() {
             {showAddForm && (
                 <div
                     className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
-                    data-oid="dma.2.t"
+                    data-oid="pv_cwuw"
                 >
-                    <div className="bg-white rounded-xl p-6 w-full max-w-md" data-oid="l18a_54">
-                        <h2 className="text-xl font-bold text-gray-900 mb-4" data-oid="rx1pz41">
+                    <div className="bg-white rounded-xl p-6 w-full max-w-md" data-oid="b4m-dex">
+                        <h2 className="text-xl font-bold text-gray-900 mb-4" data-oid=".sslk.5">
                             {editingBook ? 'Edit Book' : 'Add New Book'}
                         </h2>
 
-                        <div className="space-y-4" data-oid=":x4xy9a">
-                            <div data-oid="uh29u9w">
+                        <div className="space-y-4" data-oid="tjiv8un">
+                            <div data-oid="xr::t1k">
                                 <label
                                     className="block text-sm font-medium text-gray-700 mb-1"
-                                    data-oid="73e6bhk"
+                                    data-oid="xwi4w7m"
                                 >
                                     Title
                                 </label>
@@ -368,14 +368,14 @@ export default function AllBooksPage() {
                                     }
                                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                                     placeholder="Enter book title"
-                                    data-oid="mzj-gat"
+                                    data-oid="8fsp-qo"
                                 />
                             </div>
 
-                            <div data-oid=":aqcef5">
+                            <div data-oid="5x.8cuq">
                                 <label
                                     className="block text-sm font-medium text-gray-700 mb-1"
-                                    data-oid="qz62b7_"
+                                    data-oid="7_:qxdj"
                                 >
                                     Author
                                 </label>
@@ -387,14 +387,14 @@ export default function AllBooksPage() {
                                     }
                                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                                     placeholder="Enter author name"
-                                    data-oid=".-5r9vg"
+                                    data-oid="2iukaom"
                                 />
                             </div>
 
-                            <div data-oid="py8ojn9">
+                            <div data-oid="v.u_cmz">
                                 <label
                                     className="block text-sm font-medium text-gray-700 mb-1"
-                                    data-oid="p:7_1vk"
+                                    data-oid="xg0yzyx"
                                 >
                                     Genre
                                 </label>
@@ -406,14 +406,14 @@ export default function AllBooksPage() {
                                     }
                                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                                     placeholder="Enter genre"
-                                    data-oid="8gzm2qd"
+                                    data-oid="3vvtme1"
                                 />
                             </div>
 
-                            <div data-oid="w.1odqg">
+                            <div data-oid="48yn_vr">
                                 <label
                                     className="block text-sm font-medium text-gray-700 mb-1"
-                                    data-oid="jm_b6p_"
+                                    data-oid="pc:4v-c"
                                 >
                                     Status
                                 </label>
@@ -426,24 +426,24 @@ export default function AllBooksPage() {
                                         })
                                     }
                                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                    data-oid="biktsmy"
+                                    data-oid="xj8.1vm"
                                 >
-                                    <option value="Want to Read" data-oid="z1bpsj2">
+                                    <option value="Want to Read" data-oid="w3lnhut">
                                         Want to Read
                                     </option>
-                                    <option value="Currently Reading" data-oid="0faeurv">
+                                    <option value="Currently Reading" data-oid="1v.ui6-">
                                         Currently Reading
                                     </option>
-                                    <option value="Read" data-oid="n:99d_5">
+                                    <option value="Read" data-oid="j42kivd">
                                         Read
                                     </option>
                                 </select>
                             </div>
 
-                            <div data-oid="i-tncsr">
+                            <div data-oid="y5953d7">
                                 <label
                                     className="block text-sm font-medium text-gray-700 mb-1"
-                                    data-oid="a5:_wmy"
+                                    data-oid="kzpvhi9"
                                 >
                                     Comment
                                 </label>
@@ -455,23 +455,23 @@ export default function AllBooksPage() {
                                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
                                     placeholder="Add your thoughts about this book..."
                                     rows={3}
-                                    data-oid="sr69kl6"
+                                    data-oid="li-cq-a"
                                 />
                             </div>
                         </div>
 
-                        <div className="flex space-x-3 mt-6" data-oid="ap3j-i.">
+                        <div className="flex space-x-3 mt-6" data-oid="psh5z-r">
                             <button
                                 onClick={editingBook ? handleUpdateBook : handleAddBook}
                                 className="flex-1 bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-2 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200"
-                                data-oid="_snb-mw"
+                                data-oid="wckrnbl"
                             >
                                 {editingBook ? 'Update Book' : 'Add Book'}
                             </button>
                             <button
                                 onClick={resetForm}
                                 className="flex-1 bg-gray-200 text-gray-800 py-2 rounded-lg hover:bg-gray-300 transition-colors duration-200"
-                                data-oid="eqd84i8"
+                                data-oid="9dvzmb-"
                             >
                                 Cancel
                             </button>
@@ -484,35 +484,35 @@ export default function AllBooksPage() {
             {showImportExport && (
                 <div
                     className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
-                    data-oid="4px2rkz"
+                    data-oid="v.kane:"
                 >
-                    <div className="bg-white rounded-xl p-6 w-full max-w-md" data-oid="m8-2i7o">
-                        <h2 className="text-xl font-bold text-gray-900 mb-4" data-oid="60aad04">
+                    <div className="bg-white rounded-xl p-6 w-full max-w-md" data-oid="um6r2:e">
+                        <h2 className="text-xl font-bold text-gray-900 mb-4" data-oid="kz9o--c">
                             Manage Your Data
                         </h2>
 
-                        <div className="space-y-4" data-oid="5_6xlc0">
-                            <div data-oid="wl6nfb2">
-                                <h3 className="font-semibold text-gray-700 mb-2" data-oid=":18vqv0">
+                        <div className="space-y-4" data-oid="1s8g39p">
+                            <div data-oid="bv8mgln">
+                                <h3 className="font-semibold text-gray-700 mb-2" data-oid="mu9cws.">
                                     Export Books
                                 </h3>
-                                <p className="text-sm text-gray-600 mb-3" data-oid="he-:x:f">
+                                <p className="text-sm text-gray-600 mb-3" data-oid="br_5.k6">
                                     Download your books as a JSON file for backup or sharing.
                                 </p>
                                 <button
                                     onClick={exportBooks}
                                     className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                                    data-oid="tng:r4w"
+                                    data-oid="m6mz6cl"
                                 >
                                     📥 Export Books
                                 </button>
                             </div>
 
-                            <div data-oid="eh_faff">
-                                <h3 className="font-semibold text-gray-700 mb-2" data-oid="srctscj">
+                            <div data-oid="usufic7">
+                                <h3 className="font-semibold text-gray-700 mb-2" data-oid="ee6kfsd">
                                     Import Books
                                 </h3>
-                                <p className="text-sm text-gray-600 mb-3" data-oid="2flt6kl">
+                                <p className="text-sm text-gray-600 mb-3" data-oid="v9u3izj">
                                     Import books from a JSON file. This will add to your existing
                                     books.
                                 </p>
@@ -522,74 +522,74 @@ export default function AllBooksPage() {
                                     onChange={handleImportBooks}
                                     accept=".json"
                                     className="hidden"
-                                    data-oid="p17q8b8"
+                                    data-oid="74zr65f"
                                 />
 
                                 <button
                                     onClick={() => fileInputRef.current?.click()}
                                     className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors"
-                                    data-oid="80jwmj-"
+                                    data-oid="yeo8:fh"
                                 >
                                     📤 Import Books
                                 </button>
                             </div>
 
-                            <div data-oid="62p9-lu">
-                                <h3 className="font-semibold text-gray-700 mb-2" data-oid="v42w40h">
+                            <div data-oid="h:qluno">
+                                <h3 className="font-semibold text-gray-700 mb-2" data-oid="j7xo:g8">
                                     Reset Data
                                 </h3>
-                                <p className="text-sm text-gray-600 mb-3" data-oid="h9kfnj:">
+                                <p className="text-sm text-gray-600 mb-3" data-oid="_yg97c:">
                                     Reset to the original sample books. This will delete all your
                                     custom data.
                                 </p>
                                 <button
                                     onClick={handleResetData}
                                     className="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition-colors"
-                                    data-oid="u9e7bqn"
+                                    data-oid="e5ulhih"
                                 >
                                     🔄 Reset to Defaults
                                 </button>
                             </div>
 
-                            <div data-oid="b:an7nx">
-                                <h3 className="font-semibold text-gray-700 mb-2" data-oid="ptui2t1">
+                            <div data-oid="v3n13:x">
+                                <h3 className="font-semibold text-gray-700 mb-2" data-oid="2vx:ugg">
                                     Connection Status
                                 </h3>
-                                <div className="space-y-2 text-sm" data-oid="1i67fxp">
+                                <div className="space-y-2 text-sm" data-oid="kq-3_fq">
                                     <div
                                         className="flex items-center justify-between"
-                                        data-oid="vlvdmt4"
+                                        data-oid="0rn12fu"
                                     >
-                                        <span data-oid="5ul-.iv">Status:</span>
+                                        <span data-oid="sqp1c4z">Status:</span>
                                         <span
                                             className={`px-2 py-1 rounded text-xs ${
                                                 isOnline
                                                     ? 'bg-green-100 text-green-800'
                                                     : 'bg-red-100 text-red-800'
                                             }`}
-                                            data-oid="cldgd4z"
+                                            data-oid="5j6w4f_"
                                         >
                                             {isOnline ? 'Online' : 'Offline'}
                                         </span>
                                     </div>
                                     <div
                                         className="flex items-center justify-between"
-                                        data-oid="gtayfq_"
+                                        data-oid="2vrqw2n"
                                     >
-                                        <span data-oid="r9lr299">Books:</span>
-                                        <span className="text-gray-600" data-oid="-uc1m2v">
+                                        <span data-oid="esfw24d">Books:</span>
+                                        <span className="text-gray-600" data-oid="2j57elm">
                                             {books.length} total
                                         </span>
                                     </div>
                                     {lastSync && (
                                         <div
                                             className="flex items-center justify-between"
-                                            data-oid="76-e-ia"
+                                            data-oid="z8o2o09"
                                         >
-                                            <span data-oid="d-01_me">Last Sync:</span>
+                                            <span data-oid="b3qkl52">Last Sync:</span>
                                             <span
                                                 className="text-gray-600 text-xs"
-                                                data-oid="d2ebrfc"
+                                                data-oid="r3mx:7a"
                                             >
                                                 {new Date(lastSync).toLocaleString()}
                                             </span>
@@ -599,11 +599,11 @@ export default function AllBooksPage() {
                             </div>
                         </div>
 
-                        <div className="mt-6" data-oid="yod2cfk">
+                        <div className="mt-6" data-oid="ded940m">
                             <button
                                 onClick={() => setShowImportExport(false)}
                                 className="w-full bg-gray-200 text-gray-800 py-2 rounded-lg hover:bg-gray-300 transition-colors"
-                                data-oid="ah2k-1_"
+                                data-oid="ti1hrkm"
                             >
                                 Close
                             </button>
