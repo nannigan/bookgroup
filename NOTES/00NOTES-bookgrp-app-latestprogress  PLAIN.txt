@@ -9,6 +9,14 @@ https://nannigan.github.io/bookgroup/
 //////////////////////////////////////////////////////////////////////////////////
 
 7-4-25
+cache issues inserting hard-oded incorrect api key
+rm -rf /Users/nandesnorg/Desktop/LLMs/onlook_sites/bookgroup/out
+rm -rf /Users/nandesnorg/Desktop/LLMs/onlook_sites/bookgroup/.next
+rm -rf /Users/nandesnorg/Desktop/LLMs/onlook_sites/bookgroup/node_modules/.cache
+
+
+
+
 {
   "envApiKey": "Present",
   "envApiKeyLength": 53,
