@@ -11,54 +11,54 @@ export default function BooksReadPage() {
     return (
         <div
             className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100"
-            data-oid="5cr1k2r"
+            data-oid="n7db9zz"
         >
             {/* Header */}
-            <header className="bg-white shadow-sm border-b border-green-100" data-oid="cv5z42m">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-oid="2lu5_ii">
-                    <div className="flex items-center justify-between" data-oid="im-vd_y">
-                        <div className="flex items-center space-x-3" data-oid="yc:p5:-">
+            <header className="bg-white shadow-sm border-b border-green-100" data-oid="8_qebx9">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" data-oid="h2oyl4p">
+                    <div className="flex items-center justify-between" data-oid="gx3nysd">
+                        <div className="flex items-center space-x-3" data-oid="be1m-wc">
                             <Link
                                 href="/"
                                 className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
-                                data-oid="z.b93ao"
+                                data-oid="svlegu7"
                             >
                                 <div
                                     className="w-10 h-10 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg flex items-center justify-center"
-                                    data-oid="ou1ukzh"
+                                    data-oid="x08d0sk"
                                 >
                                     <span
                                         className="text-white font-bold text-lg"
-                                        data-oid="i73izvx"
+                                        data-oid="t6mtyv0"
                                     >
                                         ✅
                                     </span>
                                 </div>
-                                <div data-oid="zzx26oi">
+                                <div data-oid="su4-8nx">
                                     <h1
                                         className="text-2xl font-bold text-gray-900"
-                                        data-oid="1g9-hkl"
+                                        data-oid="g62p5l_"
                                     >
                                         Books Read
                                     </h1>
-                                    <p className="text-sm text-gray-600" data-oid="-knbfql">
+                                    <p className="text-sm text-gray-600" data-oid=":.74zp.">
                                         Books you have completed
                                     </p>
                                 </div>
                             </Link>
                         </div>
-                        <div className="flex items-center space-x-4" data-oid="bj8h3be">
+                        <div className="flex items-center space-x-4" data-oid="l6-6:q4">
                             <Link
                                 href="/"
                                 className="text-gray-600 hover:text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
-                                data-oid="9:0-:59"
+                                data-oid="4bjz9o2"
                             >
                                 ← Back to Home
                             </Link>
                             <Link
                                 href="/all-books"
                                 className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-2 rounded-lg hover:from-green-700 hover:to-emerald-700 transition-all duration-200 shadow-md hover:shadow-lg"
-                                data-oid="o7idhsu"
+                                data-oid="h5aiaa6"
                             >
                                 Manage Books
                             </Link>
@@ -68,20 +68,20 @@ export default function BooksReadPage() {
             </header>
 
             {/* Main Content */}
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-oid="ujj9boz">
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-oid="zqzdzhq">
                 {/* Stats */}
                 <div
                     className="bg-white rounded-xl p-6 shadow-sm border border-green-100 mb-8"
-                    data-oid="9q.vdee"
+                    data-oid="_wp7lnr"
                 >
-                    <div className="text-center" data-oid="zuidjex">
-                        <div className="text-4xl font-bold text-green-600 mb-2" data-oid="1caanqi">
+                    <div className="text-center" data-oid="vxchub0">
+                        <div className="text-4xl font-bold text-green-600 mb-2" data-oid="wahguvv">
                             {readBooks.length}
                         </div>
-                        <div className="text-gray-600" data-oid="-agtocy">
+                        <div className="text-gray-600" data-oid="qaq-c--">
                             Books Completed
                         </div>
-                        <p className="text-sm text-gray-500 mt-2" data-oid="wnyu8wi">
+                        <p className="text-sm text-gray-500 mt-2" data-oid="uk.9pvm">
                             Great job on your reading journey! 🎉
                         </p>
                     </div>
@@ -91,44 +91,44 @@ export default function BooksReadPage() {
                 {readBooks.length > 0 ? (
                     <div
                         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                        data-oid="v.p6la5"
+                        data-oid="fi70p2j"
                     >
                         {readBooks.map((book) => (
                             <div
                                 key={book.id}
                                 className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200"
-                                data-oid="27r-07."
+                                data-oid="klibodw"
                             >
-                                <div className="mb-4" data-oid="mmw1wg8">
+                                <div className="mb-4" data-oid="hk41i.m">
                                     <h3
                                         className="text-lg font-semibold text-gray-900 mb-1"
-                                        data-oid="7iw8jty"
+                                        data-oid=":4138zp"
                                     >
                                         {book.title}
                                     </h3>
-                                    <p className="text-gray-600 mb-2" data-oid="obtzj8i">
+                                    <p className="text-gray-600 mb-2" data-oid="wc:ucyx">
                                         by {book.author}
                                     </p>
-                                    <span className="text-sm text-gray-500" data-oid="zql8qnr">
+                                    <span className="text-sm text-gray-500" data-oid="dshg8m0">
                                         {book.genre}
                                     </span>
                                 </div>
 
-                                <div className="space-y-3" data-oid="9v8e9u0">
+                                <div className="space-y-3" data-oid="f8nveun">
                                     <span
                                         className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(book.status)}`}
-                                        data-oid=".t0dey9"
+                                        data-oid="9_o12s6"
                                     >
                                         {book.status}
                                     </span>
                                     {book.comment && (
                                         <div
                                             className="bg-green-50 p-3 rounded-lg border border-green-100"
-                                            data-oid="asuvenb"
+                                            data-oid="x60nkpv"
                                         >
                                             <p
                                                 className="text-sm text-gray-700 italic"
-                                                data-oid="9avs6k3"
+                                                data-oid="a-aqs.4"
                                             >
                                                 &ldquo;{book.comment}&rdquo;
                                             </p>
@@ -139,20 +139,20 @@ export default function BooksReadPage() {
                         ))}
                     </div>
                 ) : (
-                    <div className="text-center py-12" data-oid="dnff6o_">
-                        <div className="text-6xl mb-4" data-oid="p87q30z">
+                    <div className="text-center py-12" data-oid="0.-e24k">
+                        <div className="text-6xl mb-4" data-oid="8.9uo1t">
                             📚
                         </div>
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2" data-oid="5:ago4z">
+                        <h3 className="text-xl font-semibold text-gray-900 mb-2" data-oid="s:td2s1">
                             No books read yet
                         </h3>
-                        <p className="text-gray-600 mb-6" data-oid="sfysa-k">
+                        <p className="text-gray-600 mb-6" data-oid="np1q6u4">
                             Start your reading journey by adding some books!
                         </p>
                         <Link
                             href="/all-books"
                             className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-3 rounded-lg hover:from-green-700 hover:to-emerald-700 transition-all duration-200 shadow-md hover:shadow-lg"
-                            data-oid="b76rwbv"
+                            data-oid="mw9l84n"
                         >
                             Add Your First Book
                         </Link>
