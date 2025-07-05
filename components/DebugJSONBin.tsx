@@ -17,7 +17,17 @@ export function DebugJSONBin() {
                 envApiKey: apiKey ? 'Present' : 'Missing',
                 envApiKeyLength: apiKey?.length || 0,
                 apiKeyFirst20: apiKey?.substring(0, 20) || '',
-                startsWithDollar: apiKey?.startsWith('
+                startsWithDollar: apiKey?.startsWith('$') || false,
+                startsWithExpected: apiKey?.startsWith('$2a$10$ZE') || false,
+                allRelevantEnvVars: allEnvVars,
+                allNextPublicVars: Object.keys(process.env).filter(key => key.startsWith('NEXT_PUBLIC_')),
+                timestamp: new Date().toISOString(),
+            });
+        } catch (error: any) {
+            setDebugInfo({ error: error.message, timestamp: new Date().toISOString() });
+        }
+        setIsLoading(false);
+    };
 
     return (
         <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6" data-oid="l63n9.q">
