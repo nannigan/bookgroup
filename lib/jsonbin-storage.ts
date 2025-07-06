@@ -67,3 +67,46 @@ export async function testJSONBinAccess(): Promise<boolean> {
     const books = await storage.getBooks();
     return books !== null && Array.isArray(books);
 }
+
+// Enhanced test function with detailed results
+export async function testJSONBinAccessDetailed(): Promise<{
+    success: boolean;
+    apiKey: string;
+    binId: string;
+    response?: any;
+    error?: string;
+}> {
+    const apiKey = process.env.NEXT_PUBLIC_JSONBIN_API_KEY;
+    const binId = '6865e4868561e97a50308e97';
+
+    try {
+        const headers = {
+            'Content-Type': 'application/json',
+            ...(apiKey && { 'X-Master-Key': apiKey }),
+        };
+
+        const response = await fetch(`https://api.jsonbin.io/v3/b/${binId}/latest`, {
+            headers: headers,
+        });
+
+        const data = await response.json();
+
+        return {
+            success: response.ok,
+            apiKey: apiKey ? `${apiKey.substring(0, 10)}...` : 'NOT_FOUND',
+            binId: binId,
+            response: {
+                status: response.status,
+                statusText: response.statusText,
+                data: data,
+            },
+        };
+    } catch (error: any) {
+        return {
+            success: false,
+            apiKey: apiKey ? `${apiKey.substring(0, 10)}...` : 'NOT_FOUND',
+            binId: binId,
+            error: error.message,
+        };
+    }
+}

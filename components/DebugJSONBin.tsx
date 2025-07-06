@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { JSONBinStorage } from '../lib/jsonbin-storage';
 
 export function DebugJSONBin() {
     const [debugInfo, setDebugInfo] = useState<any>(null);
@@ -8,25 +9,59 @@ export function DebugJSONBin() {
     const runDebugTest = async () => {
         setIsLoading(true);
         try {
-            // Let's trace exactly what's happening
-            const directAccess = process.env.NEXT_PUBLIC_JSONBIN_API_KEY;
-            const processEnvKeys = Object.keys(process.env);
-            const hasProperty = process.env.hasOwnProperty('NEXT_PUBLIC_JSONBIN_API_KEY');
-            const viaIndex = process.env['NEXT_PUBLIC_JSONBIN_API_KEY'];
+            // Environment check
+            const apiKey = process.env.NEXT_PUBLIC_JSONBIN_API_KEY;
+            const binId = '6865e4868561e97a50308e97';
+
+            // Test direct API call
+            const headers = {
+                'Content-Type': 'application/json',
+                ...(apiKey && { 'X-Master-Key': apiKey }),
+            };
+
+            console.log('Making direct API call with headers:', headers);
+
+            const response = await fetch(`https://api.jsonbin.io/v3/b/${binId}/latest`, {
+                headers: headers,
+            });
+
+            const responseText = await response.text();
+            let responseData;
+            try {
+                responseData = JSON.parse(responseText);
+            } catch {
+                responseData = responseText;
+            }
+
+            // Test through our storage class
+            const storage = new JSONBinStorage();
+            const storageResult = await storage.getBooks();
 
             setDebugInfo({
-                directAccess: directAccess,
-                viaIndex: viaIndex,
-                hasProperty: hasProperty,
-                processEnvType: typeof process.env,
-                processEnvKeys: processEnvKeys,
-                processEnvLength: processEnvKeys.length,
-                firstFewKeys: processEnvKeys.slice(0, 5),
-                nodeEnv: process.env.NODE_ENV,
+                environment: {
+                    apiKey: apiKey ? `${apiKey.substring(0, 10)}...` : 'NOT_FOUND',
+                    apiKeyLength: apiKey?.length || 0,
+                    binId: binId,
+                },
+                directApiCall: {
+                    status: response.status,
+                    statusText: response.statusText,
+                    headers: Object.fromEntries(response.headers.entries()),
+                    responseData: responseData,
+                },
+                storageClassResult: {
+                    result: storageResult,
+                    isArray: Array.isArray(storageResult),
+                    length: storageResult?.length || 0,
+                },
                 timestamp: new Date().toISOString(),
             });
         } catch (error: any) {
-            setDebugInfo({ error: error.message, timestamp: new Date().toISOString() });
+            setDebugInfo({
+                error: error.message,
+                stack: error.stack,
+                timestamp: new Date().toISOString(),
+            });
         }
         setIsLoading(false);
     };
@@ -34,7 +69,7 @@ export function DebugJSONBin() {
     return (
         <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6" data-oid="-xifyz_">
             <h3 className="font-bold mb-2" data-oid="wqnzqdu">
-                Environment Debug
+                JSONBin API Debug
             </h3>
             <button
                 onClick={runDebugTest}
@@ -42,7 +77,7 @@ export function DebugJSONBin() {
                 className="bg-blue-500 text-white px-4 py-2 rounded mb-4 disabled:opacity-50"
                 data-oid="1haax6x"
             >
-                {isLoading ? 'Testing...' : 'Debug Environment'}
+                {isLoading ? 'Testing API...' : 'Test JSONBin API'}
             </button>
             {debugInfo && (
                 <pre
