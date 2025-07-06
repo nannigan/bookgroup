@@ -1,7 +1,7 @@
 'use client';
 
 // Your actual JSONBin configuration
-const BIN_ID = '6865e4868561e97a50308e97'; // Your actual bin ID
+const BIN_ID = 'YOUR_NEW_BIN_ID_HERE'; // Replace with your actual bin ID
 const BASE_URL = 'https://api.jsonbin.io/v3';
 
 // Get API key from environment variables
