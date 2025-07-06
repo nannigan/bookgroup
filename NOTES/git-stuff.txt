@@ -1,8 +1,0 @@
-'https://github.com/nannigan/bookgroup.git'
-git remote set-url command, followed by the remote name (usually "origin") and the new URL
-git remote set-url 'origin' 'https://github.com/nannigan/bookgroup.git'
-
-
-Deleted ResistorSistersBookgroup repository 
-vscode thought it was still the url for the remote so changed  as above
-
