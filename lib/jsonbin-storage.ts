@@ -77,7 +77,7 @@ export async function testJSONBinAccessDetailed(): Promise<{
     error?: string;
 }> {
     const apiKey = process.env.NEXT_PUBLIC_JSONBIN_API_KEY;
-    const binId = '6865e4868561e97a50308e97';
+    const binId = '6875a2a9dc637b0cdb716fde'; // Replace with your actual bin ID
 
     try {
         const headers = {

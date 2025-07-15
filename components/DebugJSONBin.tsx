@@ -11,7 +11,7 @@ export function DebugJSONBin() {
         try {
             // Environment check
             const apiKey = process.env.NEXT_PUBLIC_JSONBIN_API_KEY;
-            const binId = '6865e4868561e97a50308e97';
+            const binId = '6875a2a9dc637b0cdb716fde'; // Replace with your actual bin ID
 
             // Test direct API call
             const headers = {
@@ -67,23 +67,17 @@ export function DebugJSONBin() {
     };
 
     return (
-        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6" data-oid="eb2vhdj">
-            <h3 className="font-bold mb-2" data-oid="zz:84im">
-                JSONBin API Debug
-            </h3>
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6">
+            <h3 className="font-bold mb-2">JSONBin API Debug</h3>
             <button
                 onClick={runDebugTest}
                 disabled={isLoading}
                 className="bg-blue-500 text-white px-4 py-2 rounded mb-4 disabled:opacity-50"
-                data-oid="lcal21w"
             >
                 {isLoading ? 'Testing API...' : 'Test JSONBin API'}
             </button>
             {debugInfo && (
-                <pre
-                    className="bg-white p-2 rounded text-xs overflow-auto max-h-96"
-                    data-oid="mggagv8"
-                >
+                <pre className="bg-white p-2 rounded text-xs overflow-auto max-h-96">
                     {JSON.stringify(debugInfo, null, 2)}
                 </pre>
             )}
